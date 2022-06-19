@@ -3,10 +3,14 @@
 	if(isset($_POST['save'])){
 		extract($_POST);
 		include 'database.php';
-		$sql=mysqli_query($conn,"SELECT * FROM `user` where email='$email' and password='md5($pass)'");
-		$row  = mysqli_fetch_array($sql);
-		if(is_array($row))
-		{
+		$mysqli = new mysqli('localhost', 'root', '', 'book_review');
+		$email = $mysqli->real_escape_string($_POST['email']);
+		$stmt = $mysqli->prepare("SELECT * FROM `user` WHERE email = ?");
+		$stmt->bind_param("s", $_POST['email']);
+		$stmt->execute();
+		$result = $stmt->get_result();
+		$row = $result->fetch_assoc();
+		if(password_verify($_POST['pass'],$row['password'])){
 			$_SESSION["id"] = $row['user_id'];
 			$_SESSION["email"]=$row['email'];
 			$_SESSION["fname"]=$row['fname'];
@@ -16,8 +20,7 @@
 			}elseif($row['user_type']=="user"){
 				header("Location: user_home.php");
 			}
-		}
-		else{
+		}else{
 			echo "Invalid Email ID/Password";
 		}
 	}

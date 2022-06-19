@@ -23,10 +23,12 @@
 		<h2>Login</h2>
 		<p class="hint-text">Enter Login Details</p>
         <div class="form-group">
-        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+			<label>Email:</label>
+        	<input type="email" name="email" placeholder="Email" required="required">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="pass" placeholder="Password" required="required">
+			<label>Password:</label>
+            <input type="password" name="pass" placeholder="Password" required="required">
         </div>
 		<div class="form-group text-center">
             <button type="submit" name="save" class="btn btn-success btn-lg">Login</button>

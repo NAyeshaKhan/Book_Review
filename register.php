@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
-<title>Welcome to Finance Portal</title>
+<title>Signup to our Book Review Portal</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="assests/css/style.css">
@@ -17,22 +17,21 @@
 <body>
 <div class="signup-form text-center"">
     <form action="register_user.php" method="post" enctype="multipart/form-data">
-		<h2>Register</h2>
+		<h2>Signup</h2>
 		<p class="hint-text">Create your account</p>
         <div class="form-group">
-			<div class="row">
-				<div class="col"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
-				<div class="col"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
-		</div>        	
+			<div class="col"><input type="text" name="first_name" placeholder="First Name" required="required"></div>
+			<br>
+			<div class="col"><input type="text" name="last_name" placeholder="Last Name" required="required"></div>
         </div>
         <div class="form-group">
-        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        	<input type="email" name="email" placeholder="Email" required="required">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="pass" placeholder="Password" required="required">
+            <input type="password" name="pass" placeholder="Password" required="required">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="cpass" placeholder="Confirm Password" required="required">
+            <input type="password" name="cpass" placeholder="Confirm Password" required="required">
         </div>
         <div class="form-group">
             <label for="user_type">Register As</label>
