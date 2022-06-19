@@ -28,8 +28,10 @@
 				$row= mysqli_fetch_array($sql);
             ?>
             
-        <p class="hint-text"><br><b>Welcome </b><?php echo $_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?></p>
+        <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg" height="150" width="150" style="border-radius:50%;display:block;margin-left:auto;margin-right:auto;" />
+		<p class="hint-text"><br><b>Welcome </b><?php echo $_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?></p>
         <div class="text-center">Want to Leave the Page? <br><a href="logout.php">Logout</a></div>
+    </form>
     </form>
 	
 </div>

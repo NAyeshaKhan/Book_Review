@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	include 'database.php';
+	$id= $_SESSION["id"];
+	$sql=mysqli_query($conn,"SELECT * FROM user where user_id='$id' ");
+	$row= mysqli_fetch_array($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,16 +26,7 @@
     <form action="home.php" method="post" enctype="multipart/form-data">
 		<h2>Welcome</h2>
         <br>
-
-            <?php
-				session_start();
-				include 'database.php';
-				$id= $_SESSION["id"];
-				$sql=mysqli_query($conn,"SELECT * FROM user where user_id='$id' ");
-				$row= mysqli_fetch_array($sql);
-            ?>
-            
-        <p class="hint-text"><br><b>Welcome Admin</b><?php echo $_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?></p>
+<p class="hint-text"><br><b>Welcome Admin</b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?></p>
         <div class="text-center">Want to Leave the Page? <br><a href="logout.php">Logout</a></div>
     </form>
 	
