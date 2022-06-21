@@ -1,35 +1,55 @@
 <?php
-	session_start();
 	include 'database.php';
+	session_start();
+	if(!$_SESSION['isLogged']) {
+	  header("location:login.php"); 
+	  die();
+	}
+	if($_SESSION['user_type']!="admin") {
+	  header("location:login.php"); 
+	  die();
+	}
 	$id= $_SESSION["id"];
 	$sql=mysqli_query($conn,"SELECT * FROM user where user_id='$id' ");
 	$row= mysqli_fetch_array($sql);
+	$allowed="admin";
+	
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
-<title>Welcome to BOOK REVIEW Portal</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="assests/css/style.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
+  <title>Book Review Site</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="home_style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
+
+
 <body>
-<div class="signup-form">
-    <form action="home.php" method="post" enctype="multipart/form-data">
-		<h2>Welcome</h2>
-        <br>
-<p class="hint-text"><br><b>Welcome Admin</b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?></p>
-        <div class="text-center">Want to Leave the Page? <br><a href="logout.php">Logout</a></div>
-    </form>
-	
-</div>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="header">
+		Logged in as Admin: Hi </b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?>!
+	</div>
+    <div class="container-fluid navbar-header navbar-right">
+    <ul class="nav navbar-nav">
+      <li><a href="user_home.php">Home</a></li>
+      <li><a href="about.php">About</a></li>
+      <li><a href="profile_update.php">Update Profile</a><li>
+	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+        <ul class="dropdown-menu active">
+          <li><a href="logout.php">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+ 
 </body>
+
 </html>

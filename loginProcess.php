@@ -14,7 +14,9 @@
 			$_SESSION["id"] = $row['user_id'];
 			$_SESSION["email"]=$row['email'];
 			$_SESSION["fname"]=$row['fname'];
-			$_SESSION["lname"]=$row['lname']; 
+			$_SESSION["lname"]=$row['lname'];
+			$_SESSION["user_type"]=$row['user_type'];
+			$_SESSION["isLogged"]=True;
 			if($row['user_type']=="admin"){
 				header("Location: admin_home.php");
 			}elseif($row['user_type']=="user"){

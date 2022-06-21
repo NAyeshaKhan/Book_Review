@@ -1,12 +1,7 @@
 <?php
-	include 'database.php';
 	session_start();
-	
-	if($_SESSION['user_type']!="user") {
-	  header("location:login.php"); 
-	  die();
-	}
-	$id= $_SESSION["id"];
+	include 'database.php';
+	$id= $_SESSION["user_id"];
 	$sql=mysqli_query($conn,"SELECT * FROM user where user_id='$id' ");
 	$row= mysqli_fetch_array($sql);
 ?>
@@ -18,7 +13,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="home_style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -28,10 +22,11 @@
 <body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="header">
-		Hi </b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?>!
+	<div style="color:white; font-size: 20px; text-align:center;">
+		Logged in as Admin: Hi </b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?>!
 	</div>
     <div class="container-fluid navbar-header navbar-right">
+	<?php if ($_SESSION["isLogged"]): ?>
     <ul class="nav navbar-nav">
       <li><a href="user_home.php">Home</a></li>
       <li><a href="about.php">About</a></li>
@@ -42,6 +37,12 @@
         </ul>
       </li>
     </ul>
+	<?php else: ?>
+	<ul class="nav navbar-nav">
+      <li><a href="register.php">Sign-Up</a></li>
+      <li><a href="login.php">Login</a></li>
+    </ul>
+	<?php endif; ?>
   </div>
 </nav>
  
