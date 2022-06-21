@@ -34,16 +34,17 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="header">
-		Logged in as Admin: Hi </b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?>!
-	</div>
-    <div class="container-fluid navbar-header navbar-right">
+		<img src="https://img.icons8.com/external-xnimrodx-lineal-gradient-xnimrodx/64/000000/external-review-passive-income-xnimrodx-lineal-gradient-xnimrodx.png"/ style="float:left;">
+		<h3>Hi </b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?>!</h3>
+    </div>
+	<div class="container-fluid navbar-header navbar-right">
     <ul class="nav navbar-nav">
-      <li><a href="user_home.php">Home</a></li>
-      <li><a href="about.php">About</a></li>
-      <li><a href="profile_update.php">Update Profile</a><li>
-	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+      <li><a href="user_home.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+      <li><a href="about.php"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
         <ul class="dropdown-menu active">
-          <li><a href="logout.php">Logout</a></li>
+		  <li><a href="profile_update.php"><span class="glyphicon glyphicon-edit"></span> Update Profile</a><li>
+          <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
       </li>
     </ul>
