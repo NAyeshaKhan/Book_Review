@@ -22,9 +22,11 @@
 <body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
+	<?php if ($_SESSION["isLogged"]): ?>
 	<div style="color:white; font-size: 20px; text-align:center;">
 		Logged in as Admin: Hi </b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?>!
 	</div>
+	<?php endif ?>
     <div class="container-fluid navbar-header navbar-right">
 	<?php if ($_SESSION["isLogged"]): ?>
     <ul class="nav navbar-nav">
@@ -39,8 +41,8 @@
     </ul>
 	<?php else: ?>
 	<ul class="nav navbar-nav">
-      <li><a href="register.php">Sign-Up</a></li>
-      <li><a href="login.php">Login</a></li>
+      <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign-Up</a></li>
+      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
 	<?php endif; ?>
   </div>
