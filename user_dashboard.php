@@ -1,14 +1,7 @@
 <?php
 	include 'database.php';
 	session_start();
-	
-	if($_SESSION['user_type']!="user") {
-	  header("location:login.php"); 
-	  die();
-	}
-	$id= $_SESSION["id"];
-	$sql=mysqli_query($conn,"SELECT * FROM user where user_id='$id' ");
-	$row= mysqli_fetch_array($sql);
+	include 'user_auth.php';
 ?>
 
 <!DOCTYPE html>
