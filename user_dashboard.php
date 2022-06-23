@@ -13,7 +13,7 @@
 </head>
 <?php include('header.php'); ?>
 
-<body> 
+<body style="background-color:#F4F1EA;"> 
 </body>
 
 </html>

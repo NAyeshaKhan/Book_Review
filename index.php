@@ -23,15 +23,23 @@
 			<img src="img/book_stack.jpg" alt="Books on a shelf" style="height:70%; width: 78%;"></img>
 		</div>
 		<h1>Welcome to BookRev!</h1>
-		<h3 class="text-muted">DESCRIPTION</h3>
 		<div class="container" style="margin:15 px; width:80%">
-		  <h2>A Few Things You Can Do On Our Site</h2>
-		  <ul class="list-group list-group-flush">
-			<li class="list-group-item">See what books your friends are reading.</li>
-			<li class="list-group-item">Track the books you're reading, have read, and want to read.</li>
-			<li class="list-group-item">Check out your personalized book recommendations.</li>
-			<li class="list-group-item">Find out if a book is a good fit for you from our community’s reviews.</li>
-		  </ul>
+		  <div style="column-gap: 40px; float:left; width:25%;">
+			  <h3>What are your friends reading?</h3> 
+			  <p>Chances are your friends are discussing their favorite (and least favorite) books!</p>
+			  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit </p>
+		  </div>
+		  <div style="column-gap: 40px; float:left; width:50%;">
+			  <h3>Our Mission</h3>
+			  Our goal is to connect every book lover with their next great read. 
+			  BookRev covers all types of books—from literary fiction, history and biography to popular genres 
+			  like romance and mystery—and our book reviews are informative and accessible.
+		  </div>
+		  <div style="column-gap: 40px; float:left; width:25%;">
+			  <h3>Why would I want to create book collections?</h3>
+			  <p>Aside from the warm, fuzzy feeling of contributing to the community, there are lots of ways you can use lists, now that we've added the multiple list feature: 
+				 you can keep track of books you've read and liked, or have a wish list of things you want to read, or even a list of books you hated. 
+		  </div>
 		</div>
 	</div> 
 </body>

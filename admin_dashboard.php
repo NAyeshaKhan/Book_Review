@@ -14,7 +14,7 @@
   
 </head>
 <?php include('header.php'); ?>
-<body>
+<body style="background-color:#F4F1EA;">
 	<div style="text-align:center;">
 		<div><img src="img/book_about.jpg" alt="Books on a shelf" style="height:70%; width: 80%;"></img></div>
 		<div class="container">
@@ -29,9 +29,9 @@
 						<thead>
 							<tr>
 								<th scope="col">User ID</th>
-								<th scope="col">First Name</th>
-								<th scope="col">Last Name</th>
-								<th scope="col">Email</th>
+								<th scope="col"  style="text-align:center;">First Name</th>
+								<th scope="col"  style="text-align:center;">Last Name</th>
+								<th scope="col"  style="text-align:center;">Email</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -42,7 +42,7 @@
 									<td><?php echo $array[1];?></td>
 									<td><?php echo $array[2];?></td>
 									<td><?php echo $array[3];?></td>
-									<td><button  class="primary" type="button">See Reviews</button> 
+									<td><button type="button" class="btn btn-success">See Reviews</button> 
 								</tr>
 								<?php endwhile; ?>
 							<?php else: ?>
