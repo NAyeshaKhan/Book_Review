@@ -27,7 +27,11 @@
 		  <li><a href="user_dashboard.php"<span class="glyphicon glyphicon-home"></span> Home</a></li>
 		  <?php endif; ?>
 		  <li><a href="about.php"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
-		  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+		  
+		  <li class="dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+				<img src="img/default-user.jpg" style="vertical-align: middle; width: 25px; height: 25px; border-radius: 50%; "></img><span class="caret"></span>
+			</a>
 			<ul class="dropdown-menu active">
 			  <li><a href="profile_update.php"><span class="glyphicon glyphicon-edit"></span> Update Profile</a></li>
 			  <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
