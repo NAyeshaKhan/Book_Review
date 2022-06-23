@@ -3,5 +3,5 @@
     unset($_SESSION["id"]);
 	$_SESSION["isLogged"]=False;
     unset($_SESSION["name"]);
-    header("Location:login.php");
+    header("Location:index.php");
 ?>

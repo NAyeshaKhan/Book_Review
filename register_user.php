@@ -6,10 +6,13 @@ if(mysqli_num_rows($sql)>0)
 {
 	echo "Email Id Already Exists"; 
 	exit;
-}
-elseif(isset($_POST['save'])){
+}elseif(isset($_POST['save'])){
+	$imgpath="";
+	$first_name=trim($first_name);
+	$last_name=trim($last_name);
+	$email=trim($email);
 	$hash=password_hash($pass, PASSWORD_DEFAULT);
-	$query="INSERT INTO `user`(`fname`, `lname`, `email`, `password`, `user_type`, `profile_pic`) VALUES ('$first_name', '$last_name', '$email', '$hash', '$user_type', 'https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg')";
+	$query="INSERT INTO `user`(`fname`, `lname`, `email`, `password`, `user_type`, `profile_pic`) VALUES ('$first_name', '$last_name', '$email', '$hash', '$user_type', '$imgpath')";
 	$sql=mysqli_query($conn,$query)or die("Could Not Perform the Query");
 	header ("Location: login.php?status=success");
 }else {

@@ -6,35 +6,41 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
 <title>Signup to our Book Review Portal</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="assests/css/style.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
+<link rel="stylesheet" href="css/home_style.css">
+<link rel="stylesheet" href="css/auth_style.css">
+<script src="validator.js"></script>
 </head>
-<body>
+<?php 
+	$_SESSION["isLogged"]=False;
+	include('header.php'); 
+?>
+<body style="text-align:center; background-color:#F4F1EA;">
+<br>
+<br>
 <div class="signup-form text-center"">
-    <form action="register_user.php" method="post" enctype="multipart/form-data">
-		<h2>Signup</h2>
+    <form name="register" action="register_user.php" method="post" enctype="multipart/form-data">
+		<h1>Signup</h1>
 		<p class="hint-text">Create your account</p>
+		
         <div class="form-group">
-			<div class="col"><input type="text" name="first_name" placeholder="First Name" required="required"></div>
-			<br>
-			<div class="col"><input type="text" name="last_name" placeholder="Last Name" required="required"></div>
+		    <label class="form-label" for="first_name">First Name</label>
+			<div class="col"><input type="text" name="first_name" placeholder="First Name" required></div>
+			<label class="form-label" for="last_name">Last Name</label>
+			<div class="col"><input type="text" name="last_name" placeholder="Last Name" required></div>
         </div>
         <div class="form-group">
-        	<input type="email" name="email" placeholder="Email" required="required">
+		   <label class="form-label" for="email">Email</label>
+        	<input type="email" name="email" placeholder="Email" required>
         </div>
 		<div class="form-group">
-            <input type="password" name="pass" placeholder="Password" required="required">
+			<label class="form-label" for="pass">Password</label>
+            <input type="password" name="pass" placeholder="Password" required>
         </div>
 		<div class="form-group">
-            <input type="password" name="cpass" placeholder="Confirm Password" required="required">
+            <input type="password" name="cpass" placeholder="Confirm Password" required>
         </div>
         <div class="form-group">
-            <label for="user_type">Register As</label>
+            <label class="form-label" for="user_type">Register As</label>
 			<select name="user_type" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                     <option value='user'>User</option>
                     <option value='admin'>Admin</option>
@@ -42,7 +48,7 @@
         </div>
 		
 		<div class="form-group">
-            <button type="submit" name="save" class="btn btn-success btn-lg">Register Now</button>
+            <button type="submit" name="save" onSubmit="return validateForm()"  class="btn btn-success btn-lg">Register Now</button>
         </div>
         <div class="text-center">Already have an account? <a href="login.php">Sign in</a></div>
     </form>
@@ -50,3 +56,30 @@
 </div>
 </body>
 </html>
+<script type="text/javascript">
+
+	function validateForm(){ 
+		var fname = document.forms["register"]["first_name"].value; 
+		var lname = document.forms["register"]["last_name"].value; 
+		var pass = document.forms["register"]["pass"].value; 
+		 
+		if (fname == "" || lname="") { 
+			alert("Your full name must be filled out");
+			document.register.first_name.focus();
+			document.register.last_name.focus();
+			return false;
+		}
+		
+		if (pass == "") { 
+			alert("Password must be filled out."); 
+			return false; 
+		}else if(pass.length<3){
+			alert("Password must have at least 3 characters."); 
+			return false; 
+		}else if(pass!=$cpass){
+			alert ("Password does not match");
+			exit;
+		}
+	}
+
+</script>

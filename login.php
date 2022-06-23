@@ -9,18 +9,20 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
 <title>Welcome to Book Review Portal</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="assests/css/style.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
+<link rel="stylesheet" href="css/home_style.css">
+<link rel="stylesheet" href="css/auth_style.css">
 </head>
-<body>
-<div class="signup-form text-center">
+<?php 
+	$_SESSION["isLogged"]=False;
+	include('header.php'); 
+?>
+
+<body style="text-align:center; background-color:#F4F1EA;">
+<br>
+<br>
+<div class="signup-form text-center" style="text-align:center;">
     <form action="loginProcess.php" method="post" enctype="multipart/form-data">
-		<h2>Login</h2>
+		<h1>Login</h1>
 		<p class="hint-text">Enter Login Details</p>
         <div class="form-group">
 			<label>Email:</label>

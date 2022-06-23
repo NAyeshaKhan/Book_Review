@@ -13,12 +13,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/home_style.css">
-</head>
+  </head>
 <?php include('header.php'); ?>
 <body>
+<br>
+<br>
 	<div style="text-align:center;">
 		<div>
-			<img src="img/book_about.jpg" alt="Books on a shelf" style="height:70%; width: 78%;"></img>
+			<img src="img/book_stack.jpg" alt="Books on a shelf" style="height:70%; width: 78%;"></img>
 		</div>
 		<h1>Welcome to BookRev!</h1>
 		<h3 class="text-muted">DESCRIPTION</h3>

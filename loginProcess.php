@@ -3,7 +3,6 @@
 	if(isset($_POST['save'])){
 		extract($_POST);
 		include 'database.php';
-		$mysqli = new mysqli('localhost', 'root', '', 'book_review');
 		$email = $mysqli->real_escape_string($_POST['email']);
 		$stmt = $mysqli->prepare("SELECT * FROM `user` WHERE email = ?");
 		$stmt->bind_param("s", $_POST['email']);
@@ -18,9 +17,9 @@
 			$_SESSION["user_type"]=$row['user_type'];
 			$_SESSION["isLogged"]=True;
 			if($row['user_type']=="admin"){
-				header("Location: admin_home.php");
+				header("Location: admin_dashboard.php");
 			}elseif($row['user_type']=="user"){
-				header("Location: user_home.php");
+				header("Location: user_dashboard.php");
 			}
 		}else{
 			echo "Invalid Email ID/Password";
