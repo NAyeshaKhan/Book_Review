@@ -8,15 +8,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>BookRev Admin Panel!</title>
+  <title>BookRev Admin Panel</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
 </head>
 <?php include('header.php'); ?>
 <body style="background-color:#F4F1EA;">
-	<div style="text-align:center;">
-		<div><img src="img/book_about.jpg" alt="Books on a shelf" style="height:70%; width: 80%;"></img></div>
+	<div class="card" style="text-align:center;">
+		<div><img src="img/book_about.jpg" alt="Books on a shelf" style="height:300px; display: block; width: 100%; "></img></div>
 		<div class="container">
 			<ul class="nav nav-tabs">
 				<li class="active"><a data-toggle="tab" href="#users">Users</a></li>

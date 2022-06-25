@@ -10,39 +10,36 @@
   
 </head>
 <nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="header" style="margin:50 px;">
-			<a href="index.php" style="float:left;">
-			 <img alt="Website icon" src="img/bookrev_icon.png">
-			</a>
-	</div>
+	<a href="index.php" style="float:left;">
+		 <img alt="Website icon" src="img/bookrev_icon.png">
+	</a>	
 	<?php if ($_SESSION["isLogged"]): ?>
-		<div class="header">
-			<h3>Hi </b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?>!</h3>
-		</div>
+		<h3 class="header">Hi </b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?>!</h3>
 		<div class="container-fluid navbar-header navbar-right">
-		<ul class="nav navbar-nav">
-		  <?php if ($_SESSION["user_type"]=="admin"): ?>
-		  <li><a href="admin_dashboard.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-		  <?php else: ?>
-		  <li><a href="user_dashboard.php"<span class="glyphicon glyphicon-home"></span> Home</a></li>
-		  <?php endif; ?>
-		  <li><a href="about.php"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
-		  
-		  <li class="dropdown">
-			<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-				<img src="img/default-user.jpg" style="vertical-align: middle; width: 25px; height: 25px; border-radius: 50%; "></img><span class="caret"></span>
-			</a>
-			<ul class="dropdown-menu active">
-			  <li><a href="profile_update.php"><span class="glyphicon glyphicon-edit"></span> Update Profile</a></li>
-			  <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-			</ul>
-		  </li>
+			<ul class="nav navbar-nav">
+			  <?php if ($_SESSION["user_type"]=="admin"): ?>
+				<li><a href="admin_dashboard.php"><span class="glyphicon glyphicon-home"></span> Go To Dashboard</a></li>
+			  <?php else: ?>
+				<li><a href="user_dashboard.php"<span class="glyphicon glyphicon-home"></span>Go To Dashboard</a></li>
+			  <?php endif; ?>
+			  <li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					<img src="img/default-user.jpg" style="vertical-align: middle; width: 25px; height: 25px; border-radius: 50%; "></img><span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu active">
+				  <li><a href="profile_update.php"><span class="glyphicon glyphicon-edit"></span> Update Profile</a></li>
+				  <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+				</ul>
+			  </li>
+			</ul>  
 	<?php else: ?>
 		<div class="container-fluid navbar-header navbar-right">
-		<ul class="nav navbar-nav">
-		  <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign-Up</a></li>
-		  <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-		</ul>
+			<ul class="nav navbar-nav">
+				  <li><a href="about.php"><span class="glyphicon glyphicon-info-sign"></span> About Us</a></li>
+				  <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign-Up</a></li>
+				  <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			</ul>
+		</div>	
 	<?php endif; ?>
-  </div>
+		</div>	
 </nav>
