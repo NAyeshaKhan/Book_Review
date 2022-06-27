@@ -16,7 +16,12 @@
 <?php include('header.php'); ?>
 <body style="background-color:#F4F1EA;">
 	<div class="card" style="text-align:center;">
-		<div><img src="img/book_about.jpg" alt="Books on a shelf" style="height:300px; display: block; width: 100%; "></img></div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 		<div class="container">
 			<ul class="nav nav-tabs">
 				<li class="active"><a data-toggle="tab" href="#users">Users</a></li>
