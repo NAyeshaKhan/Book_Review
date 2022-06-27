@@ -9,15 +9,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
 </head>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top" style="position:fixed;">
 	<a href="index.php" style="float:left;">
-		 <img alt="Website icon" src="img/bookrev_icon.png">
+		 <img alt="Website icon" src="img/bookrev_icon.png" style="width: 50px; height: 50px;">
 	</a>	
 	<?php if ($_SESSION["isLogged"]): ?>
-		<h3 class="header">Hi </b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?>!</h3>
 		<div class="container-fluid navbar-header navbar-right">
 			<ul class="nav navbar-nav">
-			  <?php if ($_SESSION["user_type"]=="admin"): ?>
+				<?php if ($_SESSION["user_type"]=="admin"): ?>
 				<li><a href="admin_dashboard.php"><span class="glyphicon glyphicon-home"></span> Go To Dashboard</a></li>
 			  <?php else: ?>
 				<li><a href="user_dashboard.php"<span class="glyphicon glyphicon-home"></span>Go To Dashboard</a></li>
@@ -31,6 +30,7 @@
 				  <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 				</ul>
 			  </li>
+			  
 			</ul>  
 	<?php else: ?>
 		<div class="container-fluid navbar-header navbar-right">

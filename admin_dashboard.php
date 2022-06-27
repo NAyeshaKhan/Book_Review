@@ -19,9 +19,7 @@
 		<br>
 		<br>
 		<br>
-		<br>
-		<br>
-		<br>
+		<h4>Hi </b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?>!</h4>
 		<div class="container">
 			<ul class="nav nav-tabs">
 				<li class="active"><a data-toggle="tab" href="#users">Users</a></li>
