@@ -8,9 +8,12 @@ body {
 
 .header{
 	color:white; 
-	font-size: 20px; 
+	background-color:#F4F1EA;
+	font-size: 10px; 
 	text-align:center;
 	padding:10 px;
+	height:100px;
+	top:0;
 	}
 	
 .avatar{

@@ -11,15 +11,15 @@
 </head>
 <nav class="navbar navbar-inverse navbar-fixed-top" style="position:fixed;">
 	<a href="index.php" style="float:left;">
-		 <img alt="Website icon" src="img/bookrev_icon.png" style="width: 50px; height: 50px;">
+		 <img alt="Website icon" src="img/bookrev_icon.png">
 	</a>	
 	<?php if ($_SESSION["isLogged"]): ?>
 		<div class="container-fluid navbar-header navbar-right">
 			<ul class="nav navbar-nav">
 				<?php if ($_SESSION["user_type"]=="admin"): ?>
-				<li><a href="admin_dashboard.php"><span class="glyphicon glyphicon-home"></span> Go To Dashboard</a></li>
+				<li><a href="admin_dashboard.php"><span class="glyphicon glyphicon-home"></span> Dashboard</a></li>
 			  <?php else: ?>
-				<li><a href="user_dashboard.php"<span class="glyphicon glyphicon-home"></span>Go To Dashboard</a></li>
+				<li><a href="user_dashboard.php"<span class="glyphicon glyphicon-home"></span> Dashboard</a></li>
 			  <?php endif; ?>
 			  <li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
