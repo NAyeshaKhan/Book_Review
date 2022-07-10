@@ -13,7 +13,9 @@
 </head>
 
 <?php include('header.php'); ?>
-<body  style="background-color:#F4F1EA;">
+<?php if ($_SESSION["isLogged"]): ?>
+<body  style="background-color:#F4F1EA;margin-left: 200px;">
+<?php endif; ?>
 	<div class="containerX">
 		  <img src="img/book_about.jpg" alt="Books on a shelf" class="image" style="width:100%">
 		  <div class="middle">
