@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
-<title>Signup to our Book Review Portal</title>
-<link rel="stylesheet" href="css/home_style.css">
-<link rel="stylesheet" href="css/auth_style.css">
-<script src="validator.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+	<title>Signup to our Book Review Portal</title>
+	<link rel="stylesheet" href="css/home_style.css">
+	<link rel="stylesheet" href="css/auth_style.css">
+	<script src="validator.js"></script>
 </head>
 <?php 
 	$_SESSION["isLogged"]=False;
@@ -17,8 +17,8 @@
 <body style="text-align:center; background-color:#F4F1EA;">
 <br>
 <br>
-<div class="signup-form text-center"">
-    <form name="register" action="register_user.php" method="post" enctype="multipart/form-data">
+<div class="signup-form text-center">
+    <form name="register" action="register_user.php" method="post" enctype="multipart/form-data" style="border-style:dashed;">
 		<h1>Signup</h1>
 		<p class="hint-text">Create your account</p>
 		
@@ -42,9 +42,9 @@
         <div class="form-group">
             <label class="form-label" for="user_type">Register As</label>
 			<select name="user_type" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                    <option value='user'>User</option>
-                    <option value='admin'>Admin</option>
-                </select>
+                <option value='user'>User</option>
+                <option value='admin'>Admin</option>
+            </select>
         </div>
 		
 		<div class="form-group">
@@ -81,5 +81,6 @@
 			alert ("Password does not match");
 			exit;
 		}
+		return true;
 	}
 </script>

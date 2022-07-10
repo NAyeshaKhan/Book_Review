@@ -2,7 +2,6 @@
 	include 'database.php';
 	session_start();
 	include 'admin_auth.php';
-	$user_results= mysqli_query($conn,"SELECT * FROM user where user_type='user'");
 ?>
 
 <!DOCTYPE html>
@@ -14,53 +13,24 @@
   
 </head>
 <?php include('header.php'); ?>
-<body style="background-color:#F4F1EA;">
-	<div class="card" style="text-align:center;">
-		<br>
-		<br>
-		<br>
-		<h4>Hi </b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?>!</h4>
-		<div class="container">
-			<ul class="nav nav-tabs">
-				<li class="active"><a data-toggle="tab" href="#users">Users</a></li>
-				<li><a data-toggle="tab" href="#reviews">Reviews</a></li>
-			</ul>
-			<div class="tab-content">
-				<div id="users" class="tab-pane fade in active">
-					<h3>Users</h3>
-					<table class="table table-condensed">
-						<thead>
-							<tr>
-								<th scope="col">User ID</th>
-								<th scope="col"  style="text-align:center;">First Name</th>
-								<th scope="col"  style="text-align:center;">Last Name</th>
-								<th scope="col"  style="text-align:center;">Email</th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php if ($user_results->num_rows > 0): ?>
-								<?php while($array=mysqli_fetch_row($user_results)): ?>
-								<tr>
-									<th scope="row"><?php echo $array[0];?></th>
-									<td><?php echo $array[1];?></td>
-									<td><?php echo $array[2];?></td>
-									<td><?php echo $array[3];?></td>
-									<td><button type="button" class="btn btn-success">See Reviews</button> 
-								</tr>
-								<?php endwhile; ?>
-							<?php else: ?>
-								<tr>
-									<td colspan="3" rowspan="1" headers="">No User Data Found</td>
-								</tr>
-							<?php endif; ?>
-						 </tbody>
-					</table>
-				</div>
-				<div id="reviews" class="tab-pane fade">
-					<h3>Reviews</h3>
-				</div>
+<body style="background-color:#F4F1EA;float:right;">
+	<div class="container">
+		<div class="card" style="width:30rem; margin:2rem 5rem; padding:2rem; background-color:white;">
+			<div class="card-header">Quote</div>
+			<div class="card-body">
+				<h5 class="card-title">Special title treatment</h5>
+				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				<a href="#" class="btn btn-primary">Go somewhere</a>
 			</div>
 		</div>
+			<div class="card" style="width:30rem; margin:2rem 5rem; padding:2rem; background-color:white;">
+				<div class="card-header">Quote</div>	
+				<div class="card-body">
+					<h5 class="card-title">Special title treatment</h5>
+					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+		</div>
+	</div>	
 	</div>
 </body>
 
