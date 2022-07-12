@@ -40,8 +40,13 @@
 	if(isset($_POST['save'])){
 		extract($_POST);
 		$id=$_SESSION["id"];
+		$desc=$description.trim();
 		$stmnt= mysqli_query($conn,"INSERT INTO `review` (`user_id`, `ISBN`, `title`, `description`) VALUES ('$id', '$isbn', '$title', '$description')");
-        header("Location: review_info.php");
+        if($_SESSION['user_type']=='admin'){
+			header("Location: admin-review_info.php");
+		}else if($_SESSION['user_type']=='user'){
+			header("Location: my_reviews.php");
+		}
         //Add code for error handling
     }
 ?>

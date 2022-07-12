@@ -22,12 +22,19 @@
 </head>
 <?php include('header.php'); ?>
 <body style="background-color:#F4F1EA;">
-	<br><br><br>
 		<div class="container" style="text-align:center;">
+			<h4>Hi </b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?>!</h4>
 			<div class="p-5 mb-4 bg-light rounded-3">
-				<h4>Hi </b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?>!</h4>
-		
 				<h4><i>Browse Through Different Genres</i></h4>
+				<div class="card">
+					<div class="cardA" style="min-width:50rem;">
+						<div class="card-header">Comedy</div>
+						<div class="card-body">
+							<h5 class="card-title"></h5>
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 </body>
