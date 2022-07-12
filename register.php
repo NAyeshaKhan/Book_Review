@@ -18,10 +18,10 @@
 <br>
 <br>
 <div class="signup-form text-center">
-    <form name="register" action="register_user.php" method="post" enctype="multipart/form-data" style="border-style:dashed;">
+    <form name="register" action="register_user.php" method="post" enctype="multipart/form-data">
 		<h1>Signup</h1>
 		<p class="hint-text">Create your account</p>
-		
+		 <fieldset>
         <div class="form-group">
 		    <label class="form-label" for="first_name">First Name</label>
 			<div class="col"><input type="text" name="first_name" placeholder="First Name" required></div>
@@ -51,6 +51,7 @@
             <button type="submit" name="save" onSubmit="return validateForm()"  class="btn btn-success btn-lg">Register Now</button>
         </div>
         <div class="text-center">Already have an account? <a href="login.php">Sign in</a></div>
+		 </fieldset>
     </form>
 	
 </div>

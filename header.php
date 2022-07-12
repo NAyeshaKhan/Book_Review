@@ -11,7 +11,6 @@
 <style>
 	*{
 	font-family: "Verdana", sans-serif;	
-	text-align: center;
 	}
 
 	body {
@@ -55,17 +54,27 @@
 	.sidebar a:hover{
 		background-color:#f6f4ee;
 	}
+	
+	.cardA{
+		width:30rem; min-height:20rem; 
+		margin:2rem; padding:2rem; 
+		background-color:white;
+		border-radius:25px;
+		float:left;
+	}
+	
+	table{
+		width:80px; 
+		text-align:center;
+		float:right;
+	}
 
 	@media only screen and (max-width: 600px) {
 	.navbar{
 	  width: 100%;
 	}
 
-	table{
-		width:80px; 
-		text-align:center;
-		float:right;
-	}
+	
 </style>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" style="position:fixed;">
@@ -104,8 +113,8 @@
       <li class="nav-item nav-dropdown">
 	  <?php if ($_SESSION["user_type"]=="admin"): ?>
 				<li><a href="admin_dashboard.php"><span class="glyphicon glyphicon-home"></span> Dashboard</a></li>
-				<li><a href="user_info.php"><span class="glyphicon glyphicon-user"></span> View All Users</a></li>
-				<li><a href="review_info.php"><span class="glyphicon glyphicon-list"></span> View All Reviews</a></li>
+				<li><a href="admin-user_info.php"><span class="glyphicon glyphicon-user"></span> View All Users</a></li>
+				<li><a href="admin-review_info.php"><span class="glyphicon glyphicon-list"></span> View All Reviews</a></li>
 		<?php else: ?>
 				<li><a href="user_dashboard.php"><span class="glyphicon glyphicon-home"></span> Dashboard</a></li>
 				<li><a href="other_reviews.php">Other Users</a></li>
