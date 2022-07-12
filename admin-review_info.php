@@ -14,11 +14,6 @@
   
 </head>
 <?php include('header.php'); ?>
-<style>
-	thead{
-		text-align:center;
-	}
-</style>
 <body style="background-color:#F4F1EA;">
 	<div class="card">
 		<div class="container">
@@ -44,9 +39,9 @@
 								<td><?php echo $array[3];?></td>
 								<td><?php echo $array[4];?></td>
 								<td><i><?php echo $array[5];?><br></i> <?php echo $array[6];?></td>
-								<td><a href= "edit_review.php?id=<?php echo $array[7] ?> ">
+								<td><a href= "edit_review.php?id=<?php echo $array[7]; ?> ">
 									<button type="button" class="btn btn-success">Edit</button></a></td>
-								<td><a href= "delete_review.php?id=<?php echo $array[7] ?> ">
+								<td><a href= "delete_review.php?id=<?php echo $array[7]; ?> ">
 									<button type="button" class="btn btn-success">Remove</button></a></td>
 							</tr>
 						<?php endwhile; ?>
