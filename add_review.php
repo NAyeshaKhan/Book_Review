@@ -11,6 +11,19 @@
     include 'database.php';
     session_start();
     include('header.php');
+	if(isset($_POST['save'])){
+		extract($_POST);
+		$id=$_SESSION["id"];
+		$desc=trim($description);
+		$desc=addslashes($desc);
+		$stmnt= mysqli_query($conn,"INSERT INTO `review` (`user_id`, `ISBN`, `title`, `description`) VALUES ('$id', '$isbn', '$title', '$description')");
+        if($_SESSION['user_type']=='admin'){
+			header("Location: admin-review_info.php");
+		}else if($_SESSION['user_type']=='user'){
+			header("Location: my_reviews.php");
+		}
+        //Add code for error handling
+    }
 ?>
 <body style="text-align:center; background-color:#F4F1EA;">
 <div class="signup-form text-center">
@@ -35,18 +48,3 @@
 </div>
 </body>
 </html>
-
-<?php
-	if(isset($_POST['save'])){
-		extract($_POST);
-		$id=$_SESSION["id"];
-		$desc=$description.trim();
-		$stmnt= mysqli_query($conn,"INSERT INTO `review` (`user_id`, `ISBN`, `title`, `description`) VALUES ('$id', '$isbn', '$title', '$description')");
-        if($_SESSION['user_type']=='admin'){
-			header("Location: admin-review_info.php");
-		}else if($_SESSION['user_type']=='user'){
-			header("Location: my_reviews.php");
-		}
-        //Add code for error handling
-    }
-?>

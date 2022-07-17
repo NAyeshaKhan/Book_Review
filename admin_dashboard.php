@@ -15,16 +15,16 @@
 <?php include('header.php'); ?>
 	<body style="background-color:#F4F1EA;float:right;">
 		<div class="container" style="float:left;">
-			<div class="cardA" style="min-width:50rem;">
-				<div class="card-header">USERS</div>
+			<div class="cardA">
+				<div class="card-header"><b>USERS</b></div>
 				<div class="card-body">
 					<h5 class="card-title"></h5>
 					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 					<a href="admin-user_info.php" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span></a>
 				</div>
 			</div>
-			<div class="cardA" style="min-width:50rem;">
-				<div class="card-header">REVIEWS</div>	
+			<div class="cardA">
+				<div class="card-header"><b>REVIEWS</b></div>	
 				<div class="card-body">
 					<h5 class="card-title"></h5>
 					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -32,8 +32,8 @@
 					<a href="admin-review_info.php" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span></a>
 				</div>
 			</div>
-			<div class="cardA" style="min-width:50rem;">
-				<div class="card-header">LIBRARIES</div>	
+			<div class="cardA">
+				<div class="card-header"><b>LIBRARIES</b></div>	
 				<div class="card-body">
 					<h5 class="card-title"></h5>
 					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

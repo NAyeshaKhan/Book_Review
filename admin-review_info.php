@@ -18,7 +18,9 @@
 	<div class="card">
 		<div class="container">
 			<h3>Reviews</h3>
-			<a href="add_review.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Review</button></a>
+			<div  style="text-align:center;">
+				<a href="add_review.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Review</button></a>
+			</div>
 			<table class="table table-condensed">
 				<thead>
 					<tr>
@@ -52,6 +54,9 @@
 					<?php endif; ?>
 				</tbody>
 			</table>
+		</div>
+		<div  style="text-align:center;">
+			<a href="admin_dashboard.php"><button type="button" class="btn btn-success">Return To Dashboard</button></a>
 		</div>
 	</div>
 </body>

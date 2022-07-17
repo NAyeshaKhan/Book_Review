@@ -60,7 +60,11 @@
 		margin:2rem; padding:2rem; 
 		background-color:white;
 		border-radius:25px;
-		float:left;
+		min-width:80%;
+	}
+	
+	h3{
+		text-align:center;
 	}
 	
 	table{
@@ -78,9 +82,11 @@
 </style>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" style="position:fixed;">
-	<a href="index.php" style="float:left;">
-		 <img alt="Website icon" src="img/bookrev_icon.png">
-	</a>	
+	<div style="float:left;">
+		<a href="index.php">
+			 <img alt="Website icon" src="img/bookrev_icon.png">
+		</a>
+	</div>
 		<div class="container-fluid navbar-header navbar-right">
 			<ul class="nav navbar-nav">
 			<?php if (!$_SESSION["isLogged"]): ?>
@@ -93,6 +99,12 @@
 					</ul>
 				</div>
 			<?php else: ?>
+			  <div class="search-container" style="float:left;margin-top:15px;">
+					<form action="/action_page.php">
+						<input type="text" placeholder="Search.." name="search">
+						<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+					</form>
+			  </div>
 			  <li class="dropdown" style="float:right;">
 			    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
 					<img src="img/default-user.jpg" style="vertical-align: middle; width: 25px; height: 25px; border-radius: 50%; "></img><span class="caret"></span>

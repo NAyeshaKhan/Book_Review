@@ -46,6 +46,7 @@
 					<?php endif; ?>
 				</tbody>
 			</table>
+			<a href="admin_dashboard.php"><button type="button" class="btn btn-success">Return To Dashboard</button></a>
 		</div>
 	</div>
 </body>

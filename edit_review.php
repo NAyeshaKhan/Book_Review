@@ -43,6 +43,7 @@
 	if(isset($_POST['save'])){
 		extract($_POST);
 		$desc=$description.trim();
+		$desc=addslashes($desc);
 		$sql="UPDATE `review` SET `title`= '$title', `description`= '$description' WHERE review_id='$review'";
 		$stmnt= mysqli_query($conn,$sql);
 		if($_SESSION['user_type']=='admin'){
