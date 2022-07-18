@@ -20,7 +20,7 @@
 	<div class="containerX" style="width:100%;height:100%;">
 		<img src="img/book_stack.jpg" alt="Books on a shelf" class="image" >
 		<div class="middle">
-			<br><br>
+			<br><br><br>
 			<h1  style="text-align:center;">Welcome to BookRev!</h1>
 			<div class="row" style="margin:15 px; width:100%">
 			  <div class="col-2">

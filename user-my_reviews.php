@@ -18,7 +18,7 @@
 </head>
 <?php include('header.php'); ?>
 <body style="background-color:#F4F1EA;">
-	<div class="container">
+	<div class="container review">
 		<h3><?php echo $_SESSION['fname'] ?> <?php echo $_SESSION['lname'] ?>'s Reviews
 		<a href="add_review.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Review</button></a>
 		</h3>

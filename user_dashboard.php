@@ -22,7 +22,8 @@
 </head>
 <?php include('header.php'); ?>
 <body style="background-color:#F4F1EA;">
-		<div class="container" style="text-align:center;">
+	<div class="container" style="text-align:center;">
+			<br>
 			<h4>Hi </b><?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?>!</h4>
 			<div class="p-5 mb-4 bg-light rounded-3">
 				<h4><i>Browse Through Different Genres</i></h4>

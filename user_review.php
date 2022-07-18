@@ -18,26 +18,29 @@
 <?php include('header.php'); ?>
 	<body style="background-color:#F4F1EA;">
 		<div class="card">
-		<div class="container">
-		<h3><?php echo $row['fname'] ?> <?php echo $row['lname'] ?>'s Reviews</h3>
-		<?php if ($user_reviews->num_rows > 0 && $row['ISBN']!=NULL): ?>
-			<?php while($array=mysqli_fetch_row($user_reviews)): ?>
-				<div class="cardA">
-					<div class="card-header">ISBN: <?php echo $array[4];?></div>
-					<div class="card-body">
-						<h5 class="card-title"><b><?php echo $array[5];?></b></h5>
-						<div><p class="card-text"><?php echo $array[6];?></p></div>
-						<div style="float:right;">
-							<a href= "edit_review.php?id=<?php echo $array[7]; ?> "><span class="glyphicon glyphicon-pencil"></span></a>
-							<a href= "delete_review.php?id=<?php echo $array[7]; ?> "><span class="glyphicon glyphicon-trash"></span></a>
+			<div class="container">
+			<h3><?php echo $row['fname'] ?> <?php echo $row['lname'] ?>'s Reviews</h3>
+			<?php if ($user_reviews->num_rows > 0 && $row['ISBN']!=NULL): ?>
+				<?php while($array=mysqli_fetch_row($user_reviews)): ?>
+					<div class="cardA">
+						<div class="card-header">ISBN: <?php echo $array[4];?></div>
+						<div class="card-body">
+							<h5 class="card-title"><b><?php echo $array[5];?></b></h5>
+							<div><p class="card-text"><?php echo $array[6];?></p></div>
+							<div style="float:right;">
+								<a href= "edit_review.php?id=<?php echo $array[7]; ?> "><span class="glyphicon glyphicon-pencil"></span></a>
+								<a href= "delete_review.php?id=<?php echo $array[7]; ?> "><span class="glyphicon glyphicon-trash"></span></a>
+							</div>
 						</div>
 					</div>
-				</div>
-			<?php endwhile; ?>
-		<?php else: ?>
-			<p colspan="3" rowspan="1" headers="">No User Data Found</p>
-		<?php endif; ?>
-	</div>
+				<?php endwhile; ?>
+			<?php else: ?>
+				<p colspan="3" rowspan="1" headers="">No User Data Found</p>
+			<?php endif; ?>
+			</div>
+			<div  style="text-align:center;">
+				<a href="admin-user_info.php"><button type="button" class="btn btn-success">Return To Dashboard</button></a>
+			</div>
 		</div>
 	</body>
 </html>

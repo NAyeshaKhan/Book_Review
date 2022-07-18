@@ -14,15 +14,21 @@
 	if(isset($_POST['save'])){
 		extract($_POST);
 		$id=$_SESSION["id"];
+		
+		$title=trim($title);
+		$title=htmlspecialchars($title);
+		$title=mysqli_real_escape_string($conn,$title);
+		
 		$desc=trim($description);
-		$desc=addslashes($desc);
+		$desc=htmlspecialchars($description);
+		$desc=mysqli_real_escape_string($conn,$desc);
+		
 		$stmnt= mysqli_query($conn,"INSERT INTO `review` (`user_id`, `ISBN`, `title`, `description`) VALUES ('$id', '$isbn', '$title', '$description')");
         if($_SESSION['user_type']=='admin'){
 			header("Location: admin-review_info.php");
 		}else if($_SESSION['user_type']=='user'){
-			header("Location: my_reviews.php");
+			header("Location: user-my_reviews.php");
 		}
-        //Add code for error handling
     }
 ?>
 <body style="text-align:center; background-color:#F4F1EA;">

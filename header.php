@@ -21,9 +21,8 @@
 
 	.card{
 	margin-left:80px;
-	margin-right:50px;
 	float:left;
-}
+	}
 
 
 	.header{
@@ -32,10 +31,11 @@
 	text-align:center;
 	padding:5 px;
 	top:0;
+	background-image: linear-gradient(#000000, #023047);
 	}
 	
 	.sidebar{
-	background-color: #dcd2bc;
+	background-color: #fdfcdc;
 	height:100%;
 	left:0; 
 	float:left; 
@@ -47,7 +47,7 @@
 
 	.sidebar a{
 	color:black;
-	background-color:#dcd2bc;
+	background-color:#fdfcdc;
 	}
 
 
@@ -57,10 +57,15 @@
 	
 	.cardA{
 		width:30rem; min-height:20rem; 
-		margin:2rem; padding:2rem; 
+		margin-left:2rem; margin-top:2rem; margin-bottom:2rem;
+		padding:2rem;		
 		background-color:white;
 		border-radius:25px;
 		min-width:80%;
+	}
+	
+	.review{
+		background-image: linear-gradient(#fed9b7, #fdfcdc);
 	}
 	
 	h3{
@@ -117,20 +122,21 @@
 		</div>
 		<?php endif; ?>
 </nav>
-<br><br><br>
+<br><br>
 <?php if ($_SESSION["isLogged"]): ?>
 <div class="sidebar">
   <nav class="sidebar-nav">
     <ul class="nav">
       <li class="nav-item nav-dropdown">
+	  <br>
 	  <?php if ($_SESSION["user_type"]=="admin"): ?>
 				<li><a href="admin_dashboard.php"><span class="glyphicon glyphicon-home"></span> Dashboard</a></li>
 				<li><a href="admin-user_info.php"><span class="glyphicon glyphicon-user"></span> View All Users</a></li>
 				<li><a href="admin-review_info.php"><span class="glyphicon glyphicon-list"></span> View All Reviews</a></li>
 		<?php else: ?>
 				<li><a href="user_dashboard.php"><span class="glyphicon glyphicon-home"></span> Dashboard</a></li>
-				<li><a href="other_reviews.php">Other Users</a></li>
-				<li><a href="my_reviews.php">My Reviews</a></li>
+				<li><a href="user-other_reviews.php">Other Users</a></li>
+				<li><a href="user-my_reviews.php">My Reviews</a></li>
 				<li><a href="bookshelves.php">My Bookshelves</a></li>
 		<?php endif; ?>
 		<li><a href="profile_update.php"><span class="glyphicon glyphicon-edit"></span> Update Profile</a></li>

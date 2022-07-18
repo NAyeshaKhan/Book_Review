@@ -48,7 +48,7 @@
         </div>
 		
 		<div class="form-group">
-            <button type="submit" name="save" onSubmit="return validateForm()"  class="btn btn-success btn-lg">Register Now</button>
+            <button type="submit" name="save" class="btn btn-success btn-lg">Register Now</button>
         </div>
         <div class="text-center">Already have an account? <a href="login.php">Sign in</a></div>
 		 </fieldset>
@@ -57,31 +57,3 @@
 </div>
 </body>
 </html>
-
-<script type="text/javascript">
-
-	function validateForm(){ 
-		var fname = document.forms["register"]["first_name"].value; 
-		var lname = document.forms["register"]["last_name"].value; 
-		var pass = document.forms["register"]["pass"].value; 
-		 
-		if (fname == "" || lname="") { 
-			alert("Your full name must be filled out");
-			document.register.first_name.focus();
-			document.register.last_name.focus();
-			return false;
-		}
-		
-		if (pass == "") { 
-			alert("Password must be filled out."); 
-			return false; 
-		}else if(pass.length<3){
-			alert("Password must have at least 3 characters."); 
-			return false; 
-		}else if(pass!=$cpass){
-			alert ("Password does not match");
-			exit;
-		}
-		return true;
-	}
-</script>

@@ -6,7 +6,7 @@ include("database.php");
     if($_SESSION['user_type']=='admin'){
 		header("Location: admin-review_info.php");
 	}else if($_SESSION['user_type']=='user'){
-		header("Location: my_reviews.php");
+		header("Location: user-my_reviews.php");
 	}
 ?>
 <script>

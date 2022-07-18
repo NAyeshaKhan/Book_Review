@@ -17,7 +17,7 @@
 </head>
 <?php include('header.php'); ?>
 <body style="background-color:#F4F1EA;">
-	<div class="container">
+	<div class="container review">
 	<h3>See What Your Fellow Reviewers Are Reading!</h3>
 	<div class="card" >
 		<?php if (!empty($user_rows) && $user_rows->num_rows > 0): ?>

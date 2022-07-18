@@ -54,10 +54,11 @@
 					<?php endif; ?>
 				</tbody>
 			</table>
+			<div  style="text-align:center;">
+				<a href="admin_dashboard.php"><button type="button" class="btn btn-success">Return To Dashboard</button></a>
+			</div>
 		</div>
-		<div  style="text-align:center;">
-			<a href="admin_dashboard.php"><button type="button" class="btn btn-success">Return To Dashboard</button></a>
-		</div>
+		
 	</div>
 </body>
 
