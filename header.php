@@ -31,7 +31,6 @@
 	text-align:center;
 	padding:5 px;
 	top:0;
-	background-image: linear-gradient(#000000, #023047);
 	}
 	
 	.sidebar{
