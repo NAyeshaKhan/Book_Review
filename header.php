@@ -102,11 +102,11 @@
 				</div>
 			<?php else: ?>
 			  <div class="search-container" style="float:left;margin-top:15px;padding:10px;">
-					<form id="#searchform" action="">
-						<input type="text" id="books" placeholder="Search for Books" name="search" style="width:250px;">
-						<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+					<form id="#searchform" action="search_results.php" method="POST">
+						<input type="text" name="search"  placeholder="Search for Books" style="width:250px;">
+						<button type="submit" name="save" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
 					</form>
-			  </div>
+			</div>
 
 			  <li style="float:right;"><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 			</ul>  
