@@ -2,6 +2,7 @@
 	include 'database.php';
 	session_start();
 	include 'user_auth.php';
+	
 	$id=$_SESSION['id'];
 	$sql = "SELECT * FROM `review` WHERE user_id='$id'";
 	$user_reviews= mysqli_query($conn,$sql);
@@ -18,8 +19,8 @@
 </head>
 <?php include('header.php'); ?>
 <body style="background-color:#F4F1EA;">
-	<div class="container review">
-		<h3><?php echo $_SESSION['fname'] ?> <?php echo $_SESSION['lname'] ?>'s Reviews
+	<div class="container">
+		<h3 style="text-align:center;"><?php echo $_SESSION['fname'] ?> <?php echo $_SESSION['lname'] ?>'s Reviews
 		<a href="add_review.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Review</button></a>
 		</h3>
 		<?php if ($user_reviews->num_rows > 0): ?>
@@ -38,8 +39,9 @@
 				</div>
 			<?php endwhile; ?>
 		<?php else: ?>
-			<p colspan="3" rowspan="1" headers="">No User Data Found</p>
+			<h4 style="text-align:center;">No User Data Found</h4>
 		<?php endif; ?>
+		
 		
 	</div>
 </body>

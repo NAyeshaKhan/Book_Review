@@ -9,34 +9,65 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
 <title>Welcome to Book Review Portal</title>
-<link rel="stylesheet" href="css/home_style.css">
 <link rel="stylesheet" href="css/auth_style.css">
 </head>
+<style>
+	input{
+	  width: 100%;
+	  padding: 10px;
+	}
+	
+	label{
+	  width: 30%;
+	}
+	.authform{
+		background-color:white;
+		border-radius:30px;
+		height:50rem;
+		margin:0rem 15rem;
+		padding:0.5rem;
+		background-image:linear-gradient(#cbf3f0,#168aad,#d9ed92);
+	}
+	
+	@media only screen and (max-width: 600px) {
+		body{
+		  width: 100%;
+		  padding:0rem;
+		  margin:0rem;
+		}
+
+</style>
 <?php 
 	$_SESSION["isLogged"]=False;
 	include('header.php'); 
 ?>
 
+
+
 <body style="text-align:center; background-color:#F4F1EA;">
-<br>
-<br>
-<div class="signup-form text-center" style="text-align:center;">
-    <form action="" method="post" enctype="multipart/form-data">
+<div>
+	<form action="" method="post" enctype="multipart/form-data">
+	<div class="authform">
 		<h1>Login</h1>
 		<p class="hint-text">Enter Login Details</p>
-        <div class="form-group">
+		<br>
+        <div class="form-group align">
 			<label>Email:</label>
         	<input type="email" name="email" placeholder="Email" required="required">
         </div>
-		<div class="form-group">
+		<br>
+		<div class="form-group-align">
 			<label>Password:</label>
             <input type="password" name="pass" placeholder="Password" required="required">
         </div>
-		<div class="form-group text-center">
-            <button type="submit" name="save" class="btn btn-success btn-lg">Login</button>
+		<div style="margin-top:8rem;">
+			<div class="form-group text-center">
+				<button type="submit" name="save" class="btn btn-success btn-lg" style="border-radius:30px;padding: 15px 20px; width: 100%;">Login</button>
+			</div>
+			<div class="text-center">Don't have an account? <a href="register.php">Register Here</a></div>
         </div>
-        <div class="text-center">Don't have an account? <a href="register.php">Register Here</a></div>
     </form>
+	</div>
 </div>
 </body>
 </html>

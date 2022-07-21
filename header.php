@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/book_script.js"></script>
   
 </head>
 <style>
@@ -56,8 +57,7 @@
 	
 	.cardA{
 		width:30rem; min-height:20rem; 
-		margin-left:2rem; margin-top:2rem; margin-bottom:2rem;
-		padding:2rem;		
+		margin:1rem; padding:2rem;		
 		background-color:white;
 		border-radius:25px;
 		min-width:80%;
@@ -98,25 +98,17 @@
 				<div class="container-fluid navbar-header navbar-right">
 					<ul class="nav navbar-nav">
 						  <li><a href="about.php"><span class="glyphicon glyphicon-info-sign"></span> About Us</a></li>
-						  <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign-Up</a></li>
-						  <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					</ul>
 				</div>
 			<?php else: ?>
-			  <div class="search-container" style="float:left;margin-top:15px;">
-					<form action="/action_page.php">
-						<input type="text" placeholder="Search.." name="search">
+			  <div class="search-container" style="float:left;margin-top:15px;padding:10px;">
+					<form id="#searchform" action="">
+						<input type="text" id="books" placeholder="Search for Books" name="search" style="width:250px;">
 						<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
 					</form>
 			  </div>
-			  <li class="dropdown" style="float:right;">
-			    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-					<img src="img/default-user.jpg" style="vertical-align: middle; width: 25px; height: 25px; border-radius: 50%; "></img><span class="caret"></span>
-				</a>
-				<ul class="dropdown-menu active">
-				  <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-				</ul>
-			  </li>
+
+			  <li style="float:right;"><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 			</ul>  
 		</div>
 		<?php endif; ?>
@@ -132,6 +124,7 @@
 				<li><a href="admin_dashboard.php"><span class="glyphicon glyphicon-home"></span> Dashboard</a></li>
 				<li><a href="admin-user_info.php"><span class="glyphicon glyphicon-user"></span> View All Users</a></li>
 				<li><a href="admin-review_info.php"><span class="glyphicon glyphicon-list"></span> View All Reviews</a></li>
+				<li><a href="admin-library_info.php"><span class="glyphicon glyphicon-list"></span> View All Libraries</a></li>
 		<?php else: ?>
 				<li><a href="user_dashboard.php"><span class="glyphicon glyphicon-home"></span> Dashboard</a></li>
 				<li><a href="user-other_reviews.php">Other Users</a></li>

@@ -34,8 +34,8 @@
 				<div class="card-header"><b>LIBRARIES</b></div>	
 				<div class="card-body">
 					<h5 class="card-title"></h5>
-					<a href="admin_add_review.php" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></a>
-					<a href="admin-review_info.php" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span></a>
+					<a href="add_library.php" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></a>
+					<a href="admin-library_info.php" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span></a>
 				</div>
 			</div>
 		</div>

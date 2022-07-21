@@ -14,9 +14,13 @@ $sql=mysqli_query($conn,"SELECT * FROM `user` where email='$email'");
 		$hash=password_hash($pass, PASSWORD_DEFAULT);
 		$query="INSERT INTO `user`(`fname`, `lname`, `email`, `password`, `user_type`, `profile_pic`) VALUES ('$first_name', '$last_name', '$email', '$hash', '$user_type', '$imgpath')";
 		$sql=mysqli_query($conn,$query)or die("Could Not Perform the Query");
+		
 		header ("Location: login.php?status=success");
 	}else {
 		echo '<script>alert("Invalid User Information. Please retry.")</script>';
 		}
+		
+		
+	
 
 ?>

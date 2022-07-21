@@ -44,19 +44,21 @@
     }
 ?>
 	<body style="text-align:center; background-color:#F4F1EA;">
-		<div class="container" style="height:100%;width:80%;background-image: linear-gradient(#fed9b7, #fdfcdc);">
+		<div class="container">
 			<div class="signup-form text-center">
 			<form name="add_review" action="" method="post" enctype="multipart/form-data">
-				<h3>Update Review</h3>
-				<div class="form-group">
-				   <div class="form-outline"><label class="form-label" for="title">Title</label></div>
-					<input type="text" name="title" placeholder="<?php echo $array[3] ?>" required >
-				</div>
-				<div class="form-group">
-					<textarea name="description" maxlength="255" placeholder="<?php echo $array[4] ?>" rows="4" cols="50"></textarea>
-				</div>
-				<div class="form-group">
-					<button type="submit" name="save" class="btn btn-success btn-lg">Update Review</button>
+				<div style="background-image:linear-gradient(#b36a5e,#fff3b0); margin:10rem 30rem; height:32rem; border-radius:30px;PADDING:5px;">
+					<h3>Update Review</h3>
+					<div class="form-group">
+					   <div class="form-outline"><label class="form-label" for="title">Title</label></div>
+						<input type="text" name="title" placeholder="<?php echo $array[3] ?>" style="border-radius:10px;" required >
+					</div>
+					<div class="form-group">
+						<textarea name="description" maxlength="255" style="border-radius:10px;" placeholder="<?php echo $array[4] ?>" rows="4" cols="50"></textarea>
+					</div>
+					<div class="form-group">
+						<button type="submit" name="save" class="btn btn-success btn-lg">Update Review</button>
+					</div>
 				</div>
 			</form>
 			</div>
