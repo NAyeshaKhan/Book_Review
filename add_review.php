@@ -2,10 +2,12 @@
     include 'database.php';
     session_start();
     include('header.php');
+	extract($_GET);
+	$book_id=$id;;
 	
 	if(isset($_POST['save'])){
 		extract($_POST);
-		$id=$_SESSION["id"];
+		$user_id=$_SESSION["id"];
 		
 		$title=trim($title);
 		$title=htmlspecialchars($title);
@@ -15,11 +17,11 @@
 		$desc=htmlspecialchars($description);
 		$desc=mysqli_real_escape_string($conn,$desc);
 		
-		$sql="INSERT INTO `review` (`user_id`, `ISBN`, `title`, `description`) VALUES ('$id', '$isbn', '$title', '$description')";
+		$sql="INSERT INTO `review` (`user_id`, `book_id`, `title`, `description`) VALUES ('$user_id', '$book_id', '$title', '$description')";
 		$stmnt= mysqli_query($conn,$sql)or die("Could Not Perform the Query");
 		
-		$cookie_name = "isbn";
-		$cookie_value = $_POST['isbn'];
+		$cookie_name = "book_id";
+		$cookie_value = $book_id;
 		setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 		
 		echo "<script>Cookie for '" . $cookie_name . "' is set!</script>";
@@ -46,13 +48,7 @@
 		<h3 class="mb-4 pb-2 pb-md-0 mb-md-5" style="padding:1rem;">Add A Review</h3>
 		<p class="hint-text">Give Us Your Thoughts On This Book!</p>
 		<br>
-        <div class="form-group-align">
-			<div class="form-outline"><label class="form-label" for="isbn">ISBN</label></div>
-			<div class="form-outline"><input type="text" name="isbn" placeholder="ISBN" style="width:70%;" required ></div>
-			<small class="form-text text-muted" style="color:white;">ISBN is required.</small>
-		</div>
-		<br><br>
-		<div class="form-group">
+        <div class="form-group">
 			<div class="form-outline"><label class="form-label" for="title">Title</label></div>
 			<div class="form-outline"><input type="text" name="title" style="width:70%;" placeholder="Title" required ></div>
 			<small class="form-text text-muted" style="color:white;">Title is required.</small>

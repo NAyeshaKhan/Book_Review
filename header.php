@@ -101,7 +101,7 @@
 					</ul>
 				</div>
 			<?php else: ?>
-			  <div class="search-container" style="float:left;margin-top:15px;padding:10px;">
+			  <div class="search-container" style="float:left;padding:10px;">
 					<form id="#searchform" action="search_results.php" method="POST">
 						<input type="text" name="search"  placeholder="Search for Books" style="width:250px;">
 						<button type="submit" name="save" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>

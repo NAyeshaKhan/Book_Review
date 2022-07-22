@@ -2,7 +2,7 @@
 	include 'database.php';
 	session_start();
 	include 'admin_auth.php';
-	$review_results= mysqli_query($conn,"SELECT user.user_id, user.fname, user.lname, user.email, review.ISBN, review.title, review.description, review.review_id FROM user INNER JOIN review ON user.user_id=review.user_id");
+	$review_results= mysqli_query($conn,"SELECT user.user_id, user.fname, user.lname, user.email, review.book_id, review.title, review.description, review.review_id FROM user INNER JOIN review ON user.user_id=review.user_id");
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
 		<div class="container">
 			<h3>Reviews</h3>
 			<div  style="text-align:center;">
-				<a href="add_review.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Review</button></a>
+				<a href= "add_review.php?id=XXXX"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Review</button></a>
 			</div>
 			<table class="table table-condensed">
 				<thead>
@@ -27,7 +27,7 @@
 						<th scope="col" style="text-align:center;">User ID</th>
 						<th scope="col" style="text-align:center;">User</th>
 						<th scope="col" style="text-align:center;">Email</th>
-						<th scope="col" style="text-align:center;">ISBN</th>
+						<th scope="col" style="text-align:center;">Book ID</th>
 						<th scope="col" style="text-align:center;">Review</th>
 						<th scope="col">Action</th>
 					</tr>
