@@ -28,7 +28,7 @@
 			<?php endif; ?>
 		  </div>
 		  <?php
-		  $cookie_name="isbn";
+		  $cookie_name="book_id";
 		  if (isset($_COOKIE[$cookie_name])): ?>
 			<p><?php echo "Cookie named '" . $cookie_name . "' is set!";?></p>
 			<p><?php echo "Value is: " . $_COOKIE[$cookie_name];?></p>

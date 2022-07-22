@@ -1,5 +1,5 @@
 <?php
-
+extract($_GET);
 session_start();
 include("database.php");
 	$my_id=$_SESSION['id'];
@@ -46,15 +46,12 @@ include("database.php");
 </div>
 </body>
 <?php  
-	extract($_GET);
-	$book_id=$id;
-	
-	extract($_POST);
-	$lib_id=$library_id;
+	$book_id=$_GET['id'];
+	$lib_id=$_POST['library_id'];
 	$lib=mysqli_query($conn,"INSERT INTO `library_shelf` (`library_id`, `book_id`) VALUES ('$lib_id', '$book_id')");
 	if($_SESSION['user_type']=='admin'){
 			header("Location: admin-library_info.php");
 		}else if($_SESSION['user_type']=='user'){
-			header("Location: user_dashboard.php");
+			header("Location: user-my_libraries.php");
 		}
 ?>
