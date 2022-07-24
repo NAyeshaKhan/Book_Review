@@ -43,11 +43,11 @@
 		}
     }
 ?>
-	<body style="text-align:center; background-color:#F4F1EA;">
+	<body style="text-align:center;background-image:linear-gradient(#b36a5e,#fff3b0);">
 		<div class="container">
-			<div class="signup-form text-center">
-			<form name="add_review" action="" method="post" enctype="multipart/form-data">
-				<div style="background-image:linear-gradient(#b36a5e,#fff3b0); margin:10rem 30rem; height:32rem; border-radius:30px;PADDING:5px;">
+		<div class="signup-form text-center">
+			<form action="" method="post" enctype="multipart/form-data">
+				<div style="background-color:#F4F1EA; margin:10rem 30rem; height:32rem; border-radius:30px;PADDING:5px;">
 					<h3>Update Review</h3>
 					<div class="form-group">
 					   <div class="form-outline"><label class="form-label" for="title">Title</label></div>

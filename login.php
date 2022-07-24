@@ -15,19 +15,18 @@
 	input{
 	  width: 100%;
 	  padding: 10px;
+	  border-radius:25px;
 	}
 	
 	label{
 	  width: 30%;
 	}
 	.authform{
-		background-color:white;
 		border-radius:30px;
-		height:50rem;
-		margin:0rem 15rem;
+		height:35rem;
+		margin:5rem 15rem;
 		padding:0.5rem;
-		background-image:linear-gradient(#cbf3f0,#168aad,#d9ed92);
-	}
+}
 	
 	@media only screen and (max-width: 600px) {
 		body{
@@ -44,9 +43,8 @@
 
 
 
-<body style="text-align:center; background-color:#F4F1EA;">
-<div>
-	<form action="" method="post" enctype="multipart/form-data">
+<body style="text-align:center; background-image:linear-gradient(#cbf3f0,#168aad,#d9ed92);">
+<form action="" method="post" enctype="multipart/form-data">
 	<div class="authform">
 		<h1>Login</h1>
 		<p class="hint-text">Enter Login Details</p>
@@ -60,15 +58,17 @@
 			<label>Password:</label>
             <input type="password" name="pass" placeholder="Password" required="required">
         </div>
-		<div style="margin-top:8rem;">
+		<div style="margin-top:10rem;">
 			<div class="form-group text-center">
 				<button type="submit" name="save" class="btn btn-success btn-lg" style="border-radius:30px;padding: 15px 20px; width: 100%;">Login</button>
 			</div>
-			<div class="text-center">Don't have an account? <a href="register.php">Register Here</a></div>
-        </div>
-    </form>
-	</div>
-</div>
+			<div class="text-center">Don't have an account? <a href="register.php">Sign up</a></div>
+		</div>
+		
+    </div>
+    
+</form>
+	
 </body>
 </html>
 

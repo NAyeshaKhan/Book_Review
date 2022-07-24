@@ -24,7 +24,7 @@
 <body style="background-color:#F4F1EA;">
 	<div class="container">
 		<div style="text-align:center;">
-			<h3 style="text-align:center;">Reviews for <?php echo $data['volumeInfo']['title'];?></h3>
+			<h3 style="text-align:center;">Reviews for "<?php echo $data['volumeInfo']['title'];?>"</h3>
 			<a href= "add_review.php?id=<?php echo $book_id; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add Review</button></a>
 		</div>
 		<?php if ($book_reviews->num_rows > 0): ?>

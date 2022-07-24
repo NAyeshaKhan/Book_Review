@@ -4,7 +4,8 @@ session_start();
 include("database.php");
 	$my_id=$_SESSION['id'];
 	$library_rows= mysqli_query($conn,"SELECT * FROM library WHERE user_id ='$my_id'");
-	
+	extract($_GET);
+	$book_id=$id;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,12 +17,16 @@ include("database.php");
 
 <body style="text-align:center; background-color:#F4F1EA;">
 <div>
-	<form action="" method="post" enctype="multipart/form-data">
+	<form action="add_to_library_process.php" method="post" enctype="multipart/form-data">
 	<div style="background-image:linear-gradient(#b36a5e,#fff3b0); margin:0rem 20rem; height:50rem; border-radius:30px;padding:5px">
 		<h3 class="mb-4 pb-2 pb-md-0 mb-md-5" style="padding:1rem;">Add to Your Libraries:</h3>
 		<p class="hint-text">Select a Library to add your book to!</p>
-		<br>
-        <div class="form-group">
+		<div class="form-group">
+			<div class="form-outline">
+				<input type="text" name="book_id" value="<?php echo $book_id ?>" placeholder= "<?php echo $book_id?>">
+			</div>
+		</div><br>
+		<div class="form-group">
 			<div class="form-outline"><label class="form-label" for="library">Libraries</label></div>
 				<?php if ($library_rows->num_rows > 0): ?>
 					<?php while($array=mysqli_fetch_row($library_rows)): ?>
@@ -45,16 +50,3 @@ include("database.php");
 	</div>
 </div>
 </body>
-<?php  
-	extract($_GET);
-	$book_id=$id;
-	
-	extract($_POST);
-	$lib_id=$library_id;
-	$lib=mysqli_query($conn,"INSERT INTO `library_shelf` (`library_id`, `book_id`) VALUES ('$lib_id', '$book_id')");
-	if($_SESSION['user_type']=='admin'){
-			header("Location: admin-library_info.php");
-		}else if($_SESSION['user_type']=='user'){
-			header("Location: user_dashboard.php");
-		}
-?>

@@ -15,14 +15,13 @@
 	}
 
 	body {
-	background-color:#F4F1EA;
+	background-color:white;
 	margin-left: 100px;
 	width:80%;
 	}
 
 	.card{
 	margin-left:80px;
-	float:left;
 	}
 
 
@@ -127,7 +126,7 @@
 				<li><a href="admin-library_info.php"><span class="glyphicon glyphicon-list"></span> View All Libraries</a></li>
 		<?php else: ?>
 				<li><a href="user_dashboard.php"><span class="glyphicon glyphicon-home"></span> Dashboard</a></li>
-				<li><a href="user-other_reviews.php">Other Users</a></li>
+				<li><a href="user-other_reviews.php">Suggested Users</a></li>
 				<li><a href="user-my_reviews.php">My Reviews</a></li>
 				<li><a href="bookshelves.php">My Bookshelves</a></li>
 		<?php endif; ?>
@@ -138,3 +137,5 @@
   <?php endif; ?>
       
 </div>
+<body>
+</body>

@@ -21,14 +21,13 @@
 		border-radius:30px;
 		height:54rem;
 		margin:0rem 15rem;
-		background-image:linear-gradient(#81c3d7,#d9dcd6,#3a7ca5);
-	}
+}
 </style>
 <?php 
 	$_SESSION["isLogged"]=False;
 	include('header.php'); 
 ?>
-<body style="text-align:center; background-color:#F4F1EA;">
+<body style="text-align:center;	background-image:linear-gradient(#81c3d7,#d9dcd6,#3a7ca5);">
 	<div>
 		<form name="register" action="register_user.php" method="post" enctype="multipart/form-data">
 			<div class="authform">
