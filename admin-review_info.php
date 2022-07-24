@@ -39,7 +39,7 @@
 								<td scope="row"><b><?php echo $array[0];?></b></th>
 								<td><?php echo $array[1];?> <?php echo $array[2];?></td>
 								<td><?php echo $array[3];?></td>
-								<td><?php echo $array[4];?></td>
+								<td><a href="view_review.php?id=<?php echo $array[4]; ?>"><?php echo $array[4];?></a></td>
 								<td><i><?php echo $array[5];?><br></i> <?php echo $array[6];?></td>
 								<td><a href= "edit_review.php?id=<?php echo $array[7]; ?> ">
 									<button type="button" class="btn btn-success">Edit</button></a></td>
@@ -48,7 +48,7 @@
 							</tr>
 						<?php endwhile; ?>
 					<?php else: ?>
-							<tr>
+							<tr style="text-align:center;">
 								<td colspan="3" rowspan="1" headers="">No User Data Found</td>
 							</tr>
 					<?php endif; ?>

@@ -28,7 +28,7 @@
 						<th scope="col" style="text-align:center;">User ID</th>
 						<th scope="col" style="text-align:center;">User</th>
 						<th scope="col" style="text-align:center;">Title</th>
-						<th scope="col">Action</th>
+						<th scope="col" style="text-align:center;">Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -40,7 +40,9 @@
 								<td><?php echo $array[2];?> <?php echo $array[3];?></td>
 								<td><?php echo $array[4];?></td>
 								<td><a href= "view_library.php?id=<?php echo $array[0]; ?> ">
-									<button type="button" class="btn btn-success">View</button></a></td>
+									<button type="button" class="btn btn-success">View</button></a>
+									<a href= "remove_library.php?id=<?php echo $array[0]; ?> ">
+									<button type="button" class="btn btn-success">Delete</button></a></td>	
 							</tr>
 						<?php endwhile; ?>
 					<?php else: ?>
