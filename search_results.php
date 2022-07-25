@@ -18,10 +18,6 @@
 
 		$data = json_decode($page, true);
 	}
-		 //echo ", ID = " . ;
-
-	   
-//
 ?>	
 <!DOCTYPE html>
 <html lang="en">

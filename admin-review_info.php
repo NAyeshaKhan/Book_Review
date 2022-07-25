@@ -49,7 +49,7 @@
 						<?php endwhile; ?>
 					<?php else: ?>
 							<tr style="text-align:center;">
-								<td colspan="3" rowspan="1" headers="">No User Data Found</td>
+								<td colspan="3" rowspan="1" headers="">No Review Data Found</td>
 							</tr>
 					<?php endif; ?>
 				</tbody>

@@ -24,8 +24,7 @@
 		$cookie_value = $book_id;
 		setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 		
-		echo "<script>Cookie for '" . $cookie_name . "' is set!</script>";
-        if($_SESSION['user_type']=='admin'){
+		if($_SESSION['user_type']=='admin'){
 			header("Location: admin-review_info.php");
 		}else if($_SESSION['user_type']=='user'){
 			header("Location: user-my_reviews.php");

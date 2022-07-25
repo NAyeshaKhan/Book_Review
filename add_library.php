@@ -30,7 +30,7 @@
 
 <body style="text-align:center;background-image:linear-gradient(#b36a5e,#fff3b0); ">
 	<form action="" method="post" enctype="multipart/form-data">
-	<div style="background-color:white;margin:13rem 20rem; height:30rem; border-radius:30px;">
+	<div style="background-color:#F4F1EA;margin:13rem 20rem; height:30rem; border-radius:30px;">
 		<h3 class="mb-4 pb-2 pb-md-0 mb-md-5" style="padding:1rem;">Add A Review</h3>
 		<p class="hint-text"  style="color:grey;">Name Your Library</p>
 		<br>

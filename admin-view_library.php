@@ -4,10 +4,12 @@
 	include 'admin_auth.php';
 	
 	$lib_id=$_GET['id'];
-	$sql = "SELECT library.library_id, library.title, library_shelf.book_id FROM library LEFT JOIN library_shelf ON library_shelf.library_id=library.library_id WHERE library.library_id='$lib_id'";
+	$sql = "SELECT * FROM library  JOIN library_shelf ON library_shelf.library_id=library.library_id WHERE library.library_id='$lib_id'";
 	$library= mysqli_query($conn,$sql);
-	$result = $mysqli->query($sql);
-	$row = mysqli_fetch_row($library)
+	
+	$lib_info=mysqli_query($conn,"SELECT * FROM library WHERE library.library_id='$lib_id'");
+	$array=mysqli_fetch_row($lib_info);
+	
 
 ?>
 
@@ -20,7 +22,7 @@
 	<body style="background-color:#F4F1EA;">
 	<div class="card">
 		<div class="container">
-			<h3><b><i>Library:</b> <?php echo $row[1] ?></i></h3>
+			<h3><b><i>Library "<?php echo $array[2] ?>" Books:</b></i></h3>
 			<table class="table table-condensed">
 				<thead>
 					<tr>
@@ -35,8 +37,8 @@
 						<?php while($array=mysqli_fetch_row($library)): ?>
 							<tr style="width:100px;">
 								<td scope="row"><b><?php echo $array[0];?></b></th>
-								<td><i><?php echo $array[1];?></i></td>
-								<td><?php echo $array[2];?></td>
+								<td><i><?php echo $array[2];?></i></td>
+								<td><?php echo $array[4];?></td>
 								<td><a href= "remove_from_library.php?id=<?php echo $array[2]; ?> "><button type="button" class="btn btn-success">Delete</button></a></td>
 							</tr>
 						<?php endwhile; ?>

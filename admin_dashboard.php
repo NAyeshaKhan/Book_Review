@@ -32,7 +32,7 @@
 			<div class="cardA review">
 				<div class="card-header" style="text-align:center;"><b>REVIEWS</b></div>	
 				<div class="card-body" style="float:right;">
-					<a href="add_review.php" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></a>
+					<a href="add_review.php?id=XXXX" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></a>
 					<a href="admin-review_info.php" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span></a>
 				</div>
 			</div>

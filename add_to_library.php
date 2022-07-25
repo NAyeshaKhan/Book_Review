@@ -31,11 +31,11 @@
 				<?php if ($library_rows->num_rows > 0): ?>
 					<?php while($array=mysqli_fetch_row($library_rows)): ?>
 						<input type="checkbox" name="library_id" value="<?php echo $array[0] ?>">
-						<label><?php echo $array[2] ?></label><br>
+						<label for="library_id"><?php echo $array[2] ?></label><br>
 					<?php endwhile; ?>
 					<?php else: ?>
 						<div  style="text-align:center;">
-							<p>No User Data Found. Create A Library:</p>
+							<p>You have no Existing Libraries. Create A Library?</p>
 							<a href="add_library.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Library</button></a>
 						</div>
 					<?php endif; ?>

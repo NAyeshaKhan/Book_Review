@@ -26,7 +26,22 @@
 		<div style="text-align:center;">
 			<h3 style="text-align:center;">Reviews for "<?php echo $data['volumeInfo']['title'];?>"</h3>
 			<a href= "add_review.php?id=<?php echo $book_id; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add Review</button></a>
+			<a href= "add_to_library.php?id=<?php echo $book_id; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-bookmark"></span> Add to Library</button></a>
 		</div>
+		<div class="cardA" style="margin-left:10rem;">
+			<div>
+				<img src="<?php echo $data['volumeInfo']['imageLinks']['thumbnail'];?>" style="vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left;margin:5px; "></img>
+				<div class="card-header"><b>Title:</b> <?php echo $data['volumeInfo']['title'];?></div>
+				<div class="card-body">
+					<h5 class="card-title"><b>Author(s): <?php echo @implode(",", $data['volumeInfo']['authors']); ?></b></h5>
+					<div><p class="card-text"><i><?php echo $data['volumeInfo']['description']; ?></i></p></div>
+				</div>
+			</div>
+			
+				
+			</div>
+		</div>
+		
 		<?php if ($book_reviews->num_rows > 0): ?>
 			<?php while($array=mysqli_fetch_row($book_reviews)): ?>
 				<div class="cardA" style="margin-left:10rem;">
@@ -50,15 +65,10 @@
 							<div><p class="card-text"><?php echo $array[5];?></p></div>
 						</div>
 					</div>
-					<div style="float:right;">
-						<a href= "add_review.php?id=<?php echo $book_id; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Review</button></a>
-						<a href= "view_review.php?id=<?php echo $book_id; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-list"></span> View Reviews</button></a>
-						<a href= "add_to_library.php?id=<?php echo $book_id; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-bookmark"></span> Add to Library</button></a>
-					</div>
 				</div>
 			<?php endwhile; ?>
 		<?php else: ?>
-			<h4 style="text-align:center;">No User Data Found</h4>
+			<h4 style="text-align:center;">No Related Review Data Found</h4>
 		<?php endif; ?>
 		
 		

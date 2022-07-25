@@ -41,13 +41,13 @@
 								<td><?php echo $array[4];?></td>
 								<td><a href= "admin-view_library.php?id=<?php echo $array[0]; ?> ">
 									<button type="button" class="btn btn-success">View</button></a>
-									<a href= "remove_library.php?id=<?php echo $array[0]; ?> ">
+									<a href= "remove_library.php?lib_id=<?php echo $array[0]; ?> ">
 									<button type="button" class="btn btn-success">Delete</button></a></td>	
 							</tr>
 						<?php endwhile; ?>
 					<?php else: ?>
 							<tr>
-								<td colspan="3" rowspan="1" headers="">No User Data Found</td>
+								<td colspan="3" rowspan="1" headers="">No Library Data Found</td>
 							</tr>
 					<?php endif; ?>
 				</tbody>
