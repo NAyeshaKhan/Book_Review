@@ -39,7 +39,7 @@
 								<td><i><?php echo $array[1];?></i></td>
 								<td><?php echo $array[2];?> <?php echo $array[3];?></td>
 								<td><?php echo $array[4];?></td>
-								<td><a href= "view_library.php?id=<?php echo $array[0]; ?> ">
+								<td><a href= "admin-view_library.php?id=<?php echo $array[0]; ?> ">
 									<button type="button" class="btn btn-success">View</button></a>
 									<a href= "remove_library.php?id=<?php echo $array[0]; ?> ">
 									<button type="button" class="btn btn-success">Delete</button></a></td>	

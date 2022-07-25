@@ -35,7 +35,7 @@
 								<td><?php echo $array[1];?></td>
 								<td><?php echo $array[2];?></td>
 								<td><?php echo $array[3];?></td>
-								<td><a href= "user_review.php?id=<?php echo $array[0]; ?> ">
+								<td><a href= "admin-view_user_review.php?id=<?php echo $array[0]; ?> ">
 								<button type="button" class="btn btn-success">See Reviews</button></a>
 							</tr>
 						<?php endwhile; ?>
