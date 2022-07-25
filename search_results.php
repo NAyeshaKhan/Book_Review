@@ -36,13 +36,12 @@
 		<h3 style="text-align:center;">Results for "<?php echo $search_url; ?>"</h3>
 		<?php for ($i = 0; $i < 10; $i++): ?>
 			<div class="cardA" style="margin-left:10rem;">
-				<img src="img/book.png" style="vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
-				<a href="view_review.php?id=<?php echo $data['items'][$i]['id']; ?>">
+				<img src="<?php echo $data['items'][$i]['volumeInfo']['imageLinks']['thumbnail']; ?>" style="margin:5px;vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img><a href="view_review.php?id=<?php echo $data['items'][$i]['id']; ?>">
 					<div class="card-header"><b><?php echo $data['items'][$i]['volumeInfo']['title']; ?></b></div>
 				</a>
 				
 				<div class="card-body">
-					<h5 class="card-title"><i><?php echo @implode(",", $data['items'][$i]['volumeInfo']['authors']); ?></i></h5>
+					<h5 class="card-title"><i>Author(s): <?php echo @implode(",", $data['items'][$i]['volumeInfo']['authors']); ?></i></h5>
 					<div><p class="card-text">Published: <?php echo $data['items'][$i]['volumeInfo']['publishedDate']; ?></p></div>
 					<?php if($data['items'][$i]['volumeInfo']['pageCount']!=NULL): ?>
 						<div><p class="card-text">Pages: <?php echo $data['items'][$i]['volumeInfo']['pageCount']; ?></p></div>
@@ -51,11 +50,11 @@
 					<?php endif;?>
 				</div>
 				<div style="float:right;">
-						<?php $book_id=$data['items'][$i]['id']; ?>
-						<a href= "add_review.php?id=<?php echo $book_id; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Review</button></a>
-						<a href= "view_review.php?id=<?php echo $data['items'][$i]['id']; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-list"></span> View Reviews</button></a>
-						<a href= "add_to_library.php?id=<?php echo $data['items'][$i]['id']; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-bookmark"></span> Add to Library</button></a>
-					</div>
+					<?php $book_id=$data['items'][$i]['id']; ?>
+					<a href= "add_review.php?id=<?php echo $book_id; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Review</button></a>
+					<a href= "view_review.php?id=<?php echo $data['items'][$i]['id']; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-list"></span> View Reviews</button></a>
+					<a href= "add_to_library.php?id=<?php echo $data['items'][$i]['id']; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-bookmark"></span> Add to Library</button></a>
+				</div>
 			</div>
 		<?php endfor; ?>
 	</div>

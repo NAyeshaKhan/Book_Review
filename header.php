@@ -128,7 +128,7 @@
 				<li><a href="user_dashboard.php"><span class="glyphicon glyphicon-home"></span> Dashboard</a></li>
 				<li><a href="user-other_reviews.php">Suggested Users</a></li>
 				<li><a href="user-my_reviews.php">My Reviews</a></li>
-				<li><a href="bookshelves.php">My Bookshelves</a></li>
+				<li><a href="user-my_libraries.php">My Bookshelves</a></li>
 		<?php endif; ?>
 		<li><a href="profile_update.php"><span class="glyphicon glyphicon-edit"></span> Update Profile</a></li>
 	  </li>
@@ -137,5 +137,3 @@
   <?php endif; ?>
       
 </div>
-<body>
-</body>

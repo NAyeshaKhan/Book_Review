@@ -1,7 +1,8 @@
 <?php
-
-session_start();
-include("database.php");
+	include 'database.php';
+    session_start();
+    include('header.php');
+	
 	$my_id=$_SESSION['id'];
 	$library_rows= mysqli_query($conn,"SELECT * FROM library WHERE user_id ='$my_id'");
 	extract($_GET);
@@ -15,23 +16,22 @@ include("database.php");
     <title>Add to Library</title>
 </head>
 
-<body style="text-align:center; background-color:#F4F1EA;">
-<div>
+<body style="text-align:center;background-image:linear-gradient(#b36a5e,#fff3b0); ">
 	<form action="add_to_library_process.php" method="post" enctype="multipart/form-data">
-	<div style="background-image:linear-gradient(#b36a5e,#fff3b0); margin:0rem 20rem; height:50rem; border-radius:30px;padding:5px">
+	<div style="background-color:white;margin:13rem 20rem; height:30rem; border-radius:30px;">
 		<h3 class="mb-4 pb-2 pb-md-0 mb-md-5" style="padding:1rem;">Add to Your Libraries:</h3>
-		<p class="hint-text">Select a Library to add your book to!</p>
-		<div class="form-group">
+		<p class="hint-text"  style="color:grey;">Select a Library to add your book to!</p>
+		<div class="form-group" >
 			<div class="form-outline">
-				<input type="text" name="book_id" value="<?php echo $book_id ?>" placeholder= "<?php echo $book_id?>">
+				<input type="hidden" name="book_id" value="<?php echo $book_id ?>" placeholder= "<?php echo $book_id?>">
 			</div>
 		</div><br>
 		<div class="form-group">
-			<div class="form-outline"><label class="form-label" for="library">Libraries</label></div>
+			<div class="form-outline" ><label class="form-label" for="library">Libraries</label></div>
 				<?php if ($library_rows->num_rows > 0): ?>
 					<?php while($array=mysqli_fetch_row($library_rows)): ?>
 						<input type="checkbox" name="library_id" value="<?php echo $array[0] ?>">
-						<label> <?php echo $array[2] ?></label><br>
+						<label><?php echo $array[2] ?></label><br>
 					<?php endwhile; ?>
 					<?php else: ?>
 						<div  style="text-align:center;">
@@ -46,7 +46,6 @@ include("database.php");
 				<button type="submit" name="save" class="btn btn-success btn-lg">Save Book</button>
 			</div>
         </div>
+    </div>
     </form>
-	</div>
-</div>
 </body>

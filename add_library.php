@@ -15,7 +15,7 @@
 		if($_SESSION['user_type']=='admin'){
 			header("Location: admin-library_info.php");
 		}else if($_SESSION['user_type']=='user'){
-			header("Location: user-my_librariess.php");
+			header("Location: user-my_libraries.php");
 		}
     }
 ?>
@@ -28,26 +28,25 @@
     <title>Create Your Library</title>
 </head>
 
-<body style="text-align:center; background-color:#F4F1EA;">
-<div>
+<body style="text-align:center;background-image:linear-gradient(#b36a5e,#fff3b0); ">
 	<form action="" method="post" enctype="multipart/form-data">
-	<div style="background-image:linear-gradient(#b36a5e,#fff3b0); margin:5rem 20rem; height:30rem; border-radius:30px;">
+	<div style="background-color:white;margin:13rem 20rem; height:30rem; border-radius:30px;">
 		<h3 class="mb-4 pb-2 pb-md-0 mb-md-5" style="padding:1rem;">Add A Review</h3>
-		<p class="hint-text">Name Your Library</p>
+		<p class="hint-text"  style="color:grey;">Name Your Library</p>
 		<br>
         <div class="form-group-align">
 			<div class="form-outline"><label class="form-label" for="title">Title</label></div>
 			<div class="form-outline"><input type="text" name="title" placeholder="Title" style="width:70%;" required ></div>
-			<small class="form-text text-muted" style="color:white;">Title is required.</small>
+			<small class="form-text text-muted" style="color:grey;">Title is required.</small>
 		</div>
 		<div style="margin:6rem;">
 			<div class="form-group">
 				<button type="submit" name="save" class="btn btn-success btn-lg">Create Library</button>
 			</div>
         </div>
+    </div>
     </form>
-	</div>
-</div>
+
 </body>
 
 </html>

@@ -50,6 +50,11 @@
 							<div><p class="card-text"><?php echo $array[5];?></p></div>
 						</div>
 					</div>
+					<div style="float:right;">
+						<a href= "add_review.php?id=<?php echo $book_id; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Review</button></a>
+						<a href= "view_review.php?id=<?php echo $book_id; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-list"></span> View Reviews</button></a>
+						<a href= "add_to_library.php?id=<?php echo $book_id; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-bookmark"></span> Add to Library</button></a>
+					</div>
 				</div>
 			<?php endwhile; ?>
 		<?php else: ?>

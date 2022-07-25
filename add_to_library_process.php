@@ -9,7 +9,7 @@
 	if($_SESSION['user_type']=='admin'){
 			header("Location: admin-library_info.php");
 		}else if($_SESSION['user_type']=='user'){
-			header("Location: user_dashboard.php");
+			header("Location: user-my_libraries.php");
 		}
 	
 ?>

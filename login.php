@@ -23,7 +23,7 @@
 	}
 	.authform{
 		border-radius:30px;
-		height:35rem;
+		height:38rem;
 		margin:5rem 15rem;
 		padding:0.5rem;
 }
