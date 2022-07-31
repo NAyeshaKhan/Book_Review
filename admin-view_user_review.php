@@ -5,6 +5,7 @@
 	$id=$_GET['id'];
 	$sql = "SELECT user.user_id, fname, lname, email, book_id, title, description, review_id FROM `user` LEFT JOIN `review` ON user.user_id=review.user_id WHERE user.user_id='$id'";
 	$user_reviews= mysqli_query($conn,$sql);
+	
 	$result = $mysqli->query($sql);
 	$row = $result->fetch_assoc();
 
