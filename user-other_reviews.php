@@ -7,10 +7,10 @@
 		  
 	if ($_COOKIE[$cookie_name]!='XXXX'){
 		#Fetches users who've made reviews on same book as user's most recent review
-		$user_rows= mysqli_query($conn,"SELECT * FROM user WHERE user_id IN( SELECT user.user_id FROM user INNER JOIN review ON user.user_id=review.user_id WHERE user.user_id <> '$id' AND book_id='$_COOKIE[$cookie_name]') ORDER BY RAND() LIMIT 4");
+		$user_rows= mysqli_query($conn,"SELECT * FROM user WHERE user_id IN( SELECT user.user_id FROM user INNER JOIN review ON user.user_id=review.user_id WHERE user.user_id <> '$id' AND book_id='$_COOKIE[$cookie_name]') LIMIT 4");
 	}else{
 		#Fetches users who've made reviews
-		$user_rows= mysqli_query($conn,"SELECT * FROM user WHERE user_id IN( SELECT user.user_id FROM user INNER JOIN review ON user.user_id=review.user_id WHERE user.user_id <> '$id') ORDER BY RAND() LIMIT 4");
+		$user_rows= mysqli_query($conn,"SELECT * FROM user WHERE user_id IN( SELECT user.user_id FROM user INNER JOIN review ON user.user_id=review.user_id WHERE user.user_id <> '$id') LIMIT 4");
 	}
 ?>
 
@@ -32,14 +32,14 @@
 			<?php while($array=mysqli_fetch_row($user_rows)): ?>
 				<div class="cardA" style="float:left;margin:1rem;padding:0.5rem;">
 					<div class="card-header">
-						<div style="float:left;">
+						<div style="float:left;width:15rem;">
 							<img src="img/default-user.jpg" style="vertical-align: middle; width: 50px; height: 50px; border-radius: 50%; "></img>
 							<?php echo $array[1];?> <?php echo $array[2];?>
 							<?php $sql=mysqli_query($conn,"SELECT * FROM following WHERE user_id_1='$id' AND user_id_2='$array[0]'");
 								if($sql->num_rows == 0): ?>
-								<a href= "follow_user.php?id=<?php echo $array[0]; ?> "><button class="btn btn-success">Follow</button></a>
+								<a href= "follow_user.php?id=<?php echo $array[0]; ?> "><button class="btn btn-success" style="margin:2rem;">Follow</button></a>
 								<?php else: ?>
-								<a href= "unfollow_user.php?id=<?php echo $array[0]; ?> "><button class="btn btn-success">Unfollow</button></a>
+								<a href= "unfollow_user.php?id=<?php echo $array[0]; ?> "><button class="btn btn-success" style="margin:2rem;">Unfollow</button></a>
 							<?php endif; ?>
 						</div>
 					</div>

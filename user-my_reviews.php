@@ -4,7 +4,7 @@
 	include 'user_auth.php';
 	
 	$id=$_SESSION['id'];
-	$sql = "SELECT * FROM `review` WHERE user_id='$id'";
+	$sql = "SELECT * FROM `review` WHERE user_id='$id' ORDER BY review_id DESC";
 	$user_reviews= mysqli_query($conn,$sql);
 	
 
@@ -29,7 +29,11 @@
 					$book_id=$array[2];
 					$page = file_get_contents("https://www.googleapis.com/books/v1/volumes/$book_id");
 					$data = json_decode($page, true);?>
-					<img src="<?php echo $data['volumeInfo']['imageLinks']['thumbnail']; ?>" style="margin:5px;vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
+					<?php if(isset($data['volumeInfo']['imageLinks']['thumbnail'])): ?>
+						<img src="<?php echo $data['volumeInfo']['imageLinks']['thumbnail']; ?>" style="margin:5px;vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
+					<?php else: ?>
+						<img src="img/book.png" style="margin:5px;vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
+					<?php endif; ?>	
 					<a href="view_review.php?id=<?php echo $array[2]; ?>"><div class="card-header"><b>Title:</b> <?php echo $data['volumeInfo']['title'];?></div></a>
 					<div class="card-body">
 						<h5 class="card-title"><b><?php echo $array[3];?></b></h5>

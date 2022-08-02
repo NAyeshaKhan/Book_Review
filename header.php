@@ -101,7 +101,7 @@
 			<?php else: ?>
 			  <div class="search-container" style="float:left;padding:10px;">
 					<form id="#searchform" action="search_results.php" method="POST">
-						<input type="text" name="search"  placeholder="Search for Books" style="width:250px;">
+						<input type="text" name="search"  placeholder="Search for Books" style="width:250px;"></input>
 						<button type="submit" name="save" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
 					</form>
 			</div>
@@ -129,7 +129,7 @@
 				<li><a href="user-my_reviews.php">My Reviews</a></li>
 				<li><a href="user-my_libraries.php">My Bookshelves</a></li>
 		<?php endif; ?>
-		<li><a href="profile_update.php"><span class="glyphicon glyphicon-edit"></span> Update Profile</a></li>
+		<li><a href="profile_view.php"><span class="glyphicon glyphicon-edit"></span> View Profile</a></li>
 	  </li>
     </ul>
   </nav>

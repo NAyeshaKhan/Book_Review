@@ -14,20 +14,25 @@
 		$title=mysqli_real_escape_string($conn,$title);
 		
 		$desc=trim($description);
-		$desc=htmlspecialchars($description);
 		$desc=mysqli_real_escape_string($conn,$desc);
 		
-		$sql="INSERT INTO `review` (`user_id`, `book_id`, `title`, `description`) VALUES ('$user_id', '$book_id', '$title', '$description')";
-		$stmnt= mysqli_query($conn,$sql)or die("Could Not Perform the Query");
-		
-		$cookie_name = "book_id";
-		$cookie_value = $book_id;
-		setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-		
-		if($_SESSION['user_type']=='admin'){
-			header("Location: admin-review_info.php");
-		}else if($_SESSION['user_type']=='user'){
-			header("Location: user-my_reviews.php");
+		$sql=mysqli_query($conn,"SELECT FROM `review` WHERE user_id='$user_id' AND book_id='$book_id'");
+		//$sql->num_rows > 0
+		if($sql->num_rows > 0){
+			echo '<script>alert("Review for this book already exists!")</script>'; 
+			exit;
+		}else{
+			$sql="INSERT INTO `review` (`user_id`, `book_id`, `title`, `description`) VALUES ('$user_id', '$book_id', '$title', '$description')";
+			$stmnt= mysqli_query($conn,$sql)or die("<h2 align='center'>Review Already Exists.</h2>");
+			$cookie_name = "book_id";
+			$cookie_value = $book_id;
+			setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+			
+			if($_SESSION['user_type']=='admin'){
+				header("Location: admin-review_info.php");
+			}else if($_SESSION['user_type']=='user'){
+				header("Location: user-my_reviews.php");
+			}
 		}
     }
 ?>
@@ -38,7 +43,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Review</title>
-	<link rel="stylesheet" href="css/auth_style.css">
 </head>
 
 <body style="text-align:center;background-image:linear-gradient(#b36a5e,#fff3b0);">
@@ -49,7 +53,7 @@
 					<h3>Create A Review</h3>
 					<div class="form-group">
 					   <div class="form-outline"><label class="form-label" for="title">Title</label></div>
-						<input type="text" name="title" placeholder="Title Your Review" style="border-radius:10px;" required >
+						<input type="text" name="title" placeholder="Title Your Review" style="border-radius:10px; width: 70%; padding: 10px;" required >
 					</div>
 					<div class="form-group">
 						<textarea name="description" maxlength="255" style="border-radius:10px;" placeholder="Review this Book" rows="4" cols="50"></textarea>

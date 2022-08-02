@@ -3,10 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
 	<title>Signup to our Book Review Portal</title>
-	<script src="validator.js"></script>
 </head>
 <style>
 	input,select{

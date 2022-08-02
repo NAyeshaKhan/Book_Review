@@ -3,7 +3,7 @@
 	session_start();
 	include 'user_auth.php';
 	$user_result= mysqli_query($conn,"SELECT * FROM user where user_id='id'");
-	$genre_list=['Comedy','Romance','Fiction','Horror']; 
+	$genre_list=['Comedy','Romance','Children','Non-Fiction','Horror','Suspense']; 
 	
 ?>
 
@@ -39,7 +39,13 @@ div.scroll {
 						<div class="card" style="width:15rem;height:15rem;margin:15px;display: inline-block;">
 							<div style="width:10rem;">
 								<a href="view_review.php?id=<?php echo $genre_data['items'][$i]['id']; ?>">
+								<?php if(isset($genre_data['items'][$i]['volumeInfo']['imageLinks']['smallThumbnail'])): ?>
 									<img src="<?php echo $genre_data['items'][$i]['volumeInfo']['imageLinks']['smallThumbnail']; ?>" style="vertical-align: middle; width: 100px; height: 100px; border-radius: 5px;float:left; "></img>
+								<?php else: ?>	
+									<img src="img/book.png" style="vertical-align: middle; width: 100px; height: 100px; border-radius: 5px;float:left; "></img><a href="view_review.php?id=<?php echo $data['items'][$i]['id']; ?>">
+								<?php endif; ?>	
+				
+									
 								
 								<div style="width:100%;float:left;">
 								<figcaption style="width:15rem;overflow:auto;"><b><?php echo $genre_data['items'][$i]['volumeInfo']['title']; ?></b></figcaption></a>

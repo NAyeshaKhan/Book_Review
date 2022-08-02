@@ -38,7 +38,7 @@
 							<tr style="width:100px;">
 								<td scope="row"><b><?php echo $array[0];?></b></th>
 								<td><i><?php echo $array[2];?></i></td>
-								<td><?php echo $array[4];?></td>
+								<td><a href= "view_review.php?id=<?php echo $array[4]; ?> "><?php echo $array[4];?></a></td>
 								<td><a href= "remove_from_library.php?id=<?php echo $array[2]; ?> "><button type="button" class="btn btn-success">Delete</button></a></td>
 							</tr>
 						<?php endwhile; ?>

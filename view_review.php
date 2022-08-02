@@ -3,6 +3,12 @@
     session_start();
     include('header.php');
 	
+	if($_SESSION['user_type']=='admin'){
+		include 'admin_auth.php';
+	}else if($_SESSION['user_type']=='user'){
+		include 'user_auth.php';
+	}
+	
 	extract($_GET);
 	$book_id=$id;;
 	$sql = "SELECT user.user_id, user.fname, user.lname, review.book_id, review.title, review.description FROM `review` INNER JOIN `user` ON user.user_id=review.user_id WHERE book_id='$id'";
@@ -30,15 +36,19 @@
 		</div>
 		<div class="cardA" style="margin-left:10rem;">
 			<div>
-				<img src="<?php echo $data['volumeInfo']['imageLinks']['thumbnail'];?>" style="vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left;margin:5px; "></img>
+				<?php if(isset($data['volumeInfo']['imageLinks']['thumbnail'])): ?>
+					<img src="<?php echo $data['volumeInfo']['imageLinks']['thumbnail']; ?>" style="margin:5px;vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
+				<?php else: ?>
+					<img src="img/book.png" style="margin:5px;vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
+				<?php endif; ?>	
 				<div class="card-header"><b>Title:</b> <?php echo $data['volumeInfo']['title'];?></div>
 				<div class="card-body">
-					<h5 class="card-title"><b>Author(s): <?php echo @implode(",", $data['volumeInfo']['authors']); ?></b></h5>
+					<h5 class="card-title"><b>Author(s):</b> <?php echo @implode(",", $data['volumeInfo']['authors']); ?></h5>
+					<?php if(isset($data['volumeInfo']['averageRating'])): ?>
+					<div><p class="card-text"><b>Average Rating:</b> <i><?php echo $data['volumeInfo']['averageRating']; ?>/5</i></p></div>
+					<?php endif; ?>
 					<div><p class="card-text"><i><?php echo $data['volumeInfo']['description']; ?></i></p></div>
 				</div>
-			</div>
-			
-				
 			</div>
 		</div>
 		
@@ -70,8 +80,7 @@
 		<?php else: ?>
 			<h4 style="text-align:center;">No Related Review Data Found</h4>
 		<?php endif; ?>
-		
-		
+		</div>
 	</div>
 </body>
 </html>

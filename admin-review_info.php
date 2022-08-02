@@ -2,7 +2,7 @@
 	include 'database.php';
 	session_start();
 	include 'admin_auth.php';
-	$review_results= mysqli_query($conn,"SELECT user.user_id, user.fname, user.lname, user.email, review.book_id, review.title, review.description, review.review_id FROM user INNER JOIN review ON user.user_id=review.user_id");
+	$review_results= mysqli_query($conn,"SELECT user.user_id, user.fname, user.lname, user.email, review.book_id, review.title, review.description, review.review_id FROM user INNER JOIN review ON user.user_id=review.user_id ORDER BY review_id");
 ?>
 
 <!DOCTYPE html>
