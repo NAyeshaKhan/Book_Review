@@ -26,8 +26,26 @@
   <title>Search Results</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head
-
+</head>
+<style>
+	.button{
+		margin:1rem;
+	}
+	
+	
+	@media only screen and (max-width: 600px) {
+		.card-body{
+		  float:right;
+		  width:40%
+		}
+		.cardA,.button{
+			margin:1rem;
+			float:right;
+		}
+		button{
+			margin:1rem;
+		}
+</style>
 <body style="background-color:#F4F1EA;">
 	<div class="container">
 		<h3 style="text-align:center;">Results for "<?php echo $search_url; ?>"</h3>
@@ -48,7 +66,7 @@
 						<div><p class="card-text">Pages: <?php echo $data['items'][$i]['volumeInfo']['pageCount']; ?></p></div>
 					<?php endif;?>
 				</div>
-				<div style="float:right;">
+				<div class="button" style="float:right;">
 					<?php $book_id=$data['items'][$i]['id']; ?>
 					<a href= "add_review.php?id=<?php echo $book_id; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Review</button></a>
 					<a href= "view_review.php?id=<?php echo $data['items'][$i]['id']; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-list"></span> View Reviews</button></a>
