@@ -38,9 +38,10 @@
 <body style="background-color:#F4F1EA;">
 	<div class="card" style="text-align:center;">
 		<div class="card">
-			<div class="cardA" style="margin-left:10rem;height:40rem;">
-				<form action="" method="POST">
+			<div class="cardA" style="margin-left:10rem;height:45rem;">
+				<form action="profile_edit.php" method="POST">
 					<div class="form-group" align="center">
+						<h4 class="hint-text" style="color:grey;">Update Your Name</h4>
 						<div class="form-outline">
 							<label class="form-label" for="title">First name:</label>
 							<input type="text" class="update" name="fname" placeholder="<?php echo $array[1]; ?>"></input> 
@@ -50,6 +51,7 @@
 						</div>
 					</div>
 					<div class="form-group" align="center">
+						<h4 class="hint-text" style="color:grey;">Update Your Password</h4>
 						<div class="form-outline">
 							<label class="form-label" for="title">Password:</label>
 							<input class="update" type="password" name="pass"></input><br> 
