@@ -1,13 +1,22 @@
-.input,select{
-	  width: 70%;
+input{
+	  width: 100%;
 	  padding: 10px;
+	  border-radius:25px;
 	}
+	
 	label{
 	  width: 30%;
 	}
 	.authform{
-		background-color:white;
 		border-radius:30px;
-		height:54rem;
-		margin:0rem 15rem;
-	}
+		height:38rem;
+		margin:5rem 15rem;
+		padding:0.5rem;
+}
+	
+	@media only screen and (max-width: 600px) {
+		body,.authform{
+		  width: 100%;
+		  padding:0rem;
+		  margin:0rem;
+		}	

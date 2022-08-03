@@ -16,10 +16,23 @@
 	}
 	.authform{
 		background-color:white;
+		width:80%;
 		border-radius:30px;
-		height:54rem;
+		height:70%;
 		margin:0rem 15rem;
-}
+	}
+	
+	@media only screen and (max-width: 600px) {
+		body,.authform{
+		  width: 80%;
+		  margin:5rem;
+		  height:70%
+		}	
+	
+		body{
+			width: 100%;
+			margin:5rem;
+		}
 </style>
 <?php 
 	$_SESSION["isLogged"]=False;

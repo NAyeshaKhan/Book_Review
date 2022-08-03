@@ -1,15 +1,17 @@
 <?php
     session_start();
+	$_SESSION["isLogged"]=False;
+	include('header.php'); 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/auth_style.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
 	<title>Welcome to Book Review Portal</title>
-	<link rel="stylesheet" href="css/auth_style.css">
+	
 </head>
 <style>
 	input{
@@ -23,26 +25,23 @@
 	}
 	.authform{
 		border-radius:30px;
-		height:38rem;
+		height:50%;
+		width:70%;
 		margin:5rem 15rem;
 		padding:0.5rem;
-}
+	}
 	
 	@media only screen and (max-width: 600px) {
+		.authform{
+		  width: 70%;
+		  padding:0.5rem;
+		  margin:5rem;
+		}	
 		body{
-		  width: 100%;
-		  padding:0rem;
-		  margin:0rem;
+			width:100%;
 		}
 
 </style>
-<?php 
-	$_SESSION["isLogged"]=False;
-	include('header.php'); 
-?>
-
-
-
 <body style="text-align:center; background-image:linear-gradient(#cbf3f0,#168aad,#d9ed92);">
 <form action="" method="post" enctype="multipart/form-data">
 	<div class="authform">
