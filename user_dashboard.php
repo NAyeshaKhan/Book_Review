@@ -17,11 +17,15 @@
 </head>
 <?php include('header.php'); ?>
 <style>
-div.scroll {
-  overflow: auto;
-  white-space: nowrap;
-}
-
+	div.scroll {
+	  overflow: auto;
+	  white-space: nowrap;
+	}
+	
+	@media only screen and (max-width: 600px) {
+		.card{
+			width: 100%;
+		}
 </style>
 
 <body style="background-color:#F4F1EA;">

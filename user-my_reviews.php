@@ -18,13 +18,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
 </head>
+<style>
+	.cardA{
+		width:100%;
+		margin:2rem;
+	}
+	
+	@media only screen and (max-width: 600px) {
+		body,.cardA{
+		  width: 100%;
+		  
+		}
+</style>
 <?php include('header.php'); ?>
 <body style="background-color:#F4F1EA;">
 	<div class="card">
 		<h3 style="text-align:center;"><?php echo $_SESSION['fname'] ?> <?php echo $_SESSION['lname'] ?>'s Reviews</h3>
 		<?php if ($user_reviews->num_rows > 0): ?>
 			<?php while($array=mysqli_fetch_row($user_reviews)): ?>
-				<div class="cardA" style="margin-left:10rem;">
+				<div class="cardA" style="margin:2rem;">
 				<?php 
 					$book_id=$array[2];
 					$page = file_get_contents("https://www.googleapis.com/books/v1/volumes/$book_id");

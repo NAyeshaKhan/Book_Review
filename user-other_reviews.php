@@ -32,7 +32,7 @@
 			<?php while($array=mysqli_fetch_row($user_rows)): ?>
 				<div class="cardA" style="float:left;margin:1rem;padding:0.5rem;">
 					<div class="card-header">
-						<div style="float:left;width:15rem;">
+						<div style="float:left;width:28%;">
 							<img src="img/default-user.jpg" style="vertical-align: middle; width: 50px; height: 50px; border-radius: 50%; "></img>
 							<?php echo $array[1];?> <?php echo $array[2];?>
 							<?php $sql=mysqli_query($conn,"SELECT * FROM following WHERE user_id_1='$id' AND user_id_2='$array[0]'");
