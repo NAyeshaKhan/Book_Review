@@ -45,9 +45,11 @@
 				<div class="card-body">
 					<h5 class="card-title"><b>Author(s):</b> <?php echo @implode(",", $data['volumeInfo']['authors']); ?></h5>
 					<?php if(isset($data['volumeInfo']['averageRating'])): ?>
-					<div><p class="card-text"><b>Average Rating:</b> <i><?php echo $data['volumeInfo']['averageRating']; ?>/5</i></p></div>
+						<div><p class="card-text"><b>Average Rating:</b> <i><?php echo $data['volumeInfo']['averageRating']; ?>/5</i></p></div>
 					<?php endif; ?>
+					<?php if(isset($data['volumeInfo']['description'])): ?>
 					<div><p class="card-text"><i><?php echo $data['volumeInfo']['description']; ?></i></p></div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

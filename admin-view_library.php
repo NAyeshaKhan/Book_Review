@@ -22,12 +22,11 @@
 	<body style="background-color:#F4F1EA;">
 	<div class="card">
 		<div class="container">
-			<h3><b><i>Library "<?php echo $array[2] ?>" Books:</b></i></h3>
+			<h3><b><i>Books In "<?php echo $array[2] ?>":</b></i></h3>
 			<table class="table table-condensed">
 				<thead>
 					<tr>
 						<th scope="col" style="text-align:center;">Library ID</th>
-						<th scope="col" style="text-align:center;">Title</th>
 						<th scope="col" style="text-align:center;">Book ID</th>
 						<th scope="col" style="text-align:center;">Action</th>
 					</tr>
@@ -37,7 +36,6 @@
 						<?php while($array=mysqli_fetch_row($library)): ?>
 							<tr style="width:100px;">
 								<td scope="row"><b><?php echo $array[0];?></b></th>
-								<td><i><?php echo $array[2];?></i></td>
 								<td><a href= "view_review.php?id=<?php echo $array[4]; ?> "><?php echo $array[4];?></a></td>
 								<td><a href= "remove_from_library.php?id=<?php echo $array[2]; ?> "><button type="button" class="btn btn-success">Delete</button></a></td>
 							</tr>
