@@ -45,8 +45,6 @@
 		<?php else: ?>
 			<h4 style="text-align:center;">No Library Data Found</h4>
 		<?php endif; ?>
-		
-		
 	</div>
 </body>
 	

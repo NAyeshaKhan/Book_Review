@@ -4,7 +4,6 @@
 	include 'user_auth.php';
 	$user_result= mysqli_query($conn,"SELECT * FROM user where user_id='id'");
 	$genre_list=['Comedy','Romance','Children','Non-Fiction','Horror','Suspense']; 
-	
 ?>
 
 <!DOCTYPE html>

@@ -28,7 +28,7 @@
 		body,.cardA{
 		  width: 100%;
 		  
-		}
+	}
 </style>
 <?php include('header.php'); ?>
 <body style="background-color:#F4F1EA;">

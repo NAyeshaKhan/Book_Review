@@ -25,8 +25,22 @@
   <title>BookRev Reviews Panel</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
 </head>
+
+<style>
+	.cardA{
+		width:80%;
+		margin:2rem 10rem;
+	}
+	
+	@media only screen and (max-width: 600px) {
+		body,.cardA{
+			width: 100%;
+			margin:2rem;
+		}
+
+</style>
+
 <body style="background-color:#F4F1EA;">
 	<div class="container">
 		<div style="text-align:center;">
@@ -34,7 +48,7 @@
 			<a href= "add_review.php?id=<?php echo $book_id; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add Review</button></a>
 			<a href= "add_to_library.php?id=<?php echo $book_id; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-bookmark"></span> Add to Library</button></a>
 		</div>
-		<div class="cardA" style="margin-left:10rem;">
+		<div class="cardA">
 			<div>
 				<?php if(isset($data['volumeInfo']['imageLinks']['thumbnail'])): ?>
 					<img src="<?php echo $data['volumeInfo']['imageLinks']['thumbnail']; ?>" style="margin:5px;vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
@@ -56,8 +70,8 @@
 		
 		<?php if ($book_reviews->num_rows > 0): ?>
 			<?php while($array=mysqli_fetch_row($book_reviews)): ?>
-				<div class="cardA" style="margin-left:10rem;">
-					<div style="float:left;width:7	rem;">
+				<div class="cardA">
+					<div style="float:left;width:7rem;">
 						<img src="img/default-user.jpg" style="vertical-align: middle; width: 50px; height: 50px; border-radius: 50%; "></img>
 						<div class="card-header"><b><?php echo $array[1];?> <?php echo $array[2];?></b></div>
 						<?php 

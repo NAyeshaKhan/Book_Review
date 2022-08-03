@@ -4,7 +4,7 @@
 	include 'user_auth.php';
 	$id=$_SESSION['id'];
 	$cookie_name="book_id";
-		  
+		
 	if ($_COOKIE[$cookie_name]!='XXXX'){
 		#Fetches users who've made reviews on same book as user's most recent review
 		$user_rows= mysqli_query($conn,"SELECT * FROM user WHERE user_id IN( SELECT user.user_id FROM user INNER JOIN review ON user.user_id=review.user_id WHERE user.user_id <> '$id' AND book_id='$_COOKIE[$cookie_name]') LIMIT 4");
