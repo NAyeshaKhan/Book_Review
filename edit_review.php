@@ -43,18 +43,60 @@
 		}
     }
 ?>
-	<body style="text-align:center;background-image:linear-gradient(#b36a5e,#fff3b0);">
-		<div class="container">
-		<div class="signup-form text-center">
+
+<style>
+	label{
+	  width: 30%;
+	}
+	
+	
+	.Xform{
+		background-color:#F4F1EA; 
+		margin:10rem; 
+		height:50%; 
+		border-radius:30px;
+		PADDING:5px;
+		width:50%;
+	}
+	
+	.form-input{
+		width:80%;
+		padding:1rem;
+		margin:1rem;
+		border-radius:10px;
+	}
+		
+	
+	@media only screen and (max-width: 600px) {
+		.card{
+			padding-top:15rem;
+		}
+		.Xform{
+			width:70%;
+		}
+		.Xform.input,.Xform.textarea{
+			width:100%;
+			padding: 2rem;
+		}
+		body{
+			width: 100%;
+			padding:0rem;
+			margin:0rem;
+		}	
+	}	
+</style>
+<body style="text-align:center;background-image:linear-gradient(#b36a5e,#fff3b0);">
+	<div class="container">
+		<div class="card">
 			<form action="" method="post" enctype="multipart/form-data">
-				<div style="background-color:#F4F1EA; margin:10rem 30rem; height:32rem; border-radius:30px;PADDING:5px;">
+				<div class="Xform">
 					<h3>Update Review</h3>
 					<div class="form-group">
 					   <div class="form-outline"><label class="form-label" for="title">Title</label></div>
-						<input type="text" name="title" placeholder="<?php echo $array[3] ?>" style="border-radius:10px;" required >
+						<input class="form-input" type="text" name="title" placeholder="<?php echo $array[3] ?>" style="border-radius:10px;" required >
 					</div>
 					<div class="form-group">
-						<textarea name="description" maxlength="255" style="border-radius:10px;" placeholder="<?php echo $array[4] ?>" rows="4" cols="50"></textarea>
+						<textarea class="form-input" name="description" maxlength="255" style="border-radius:10px;" placeholder="<?php echo $array[4] ?>" rows="4" cols="50"></textarea>
 					</div>
 					<div class="form-group">
 						<button type="submit" name="save" class="btn btn-success btn-lg">Update Review</button>
