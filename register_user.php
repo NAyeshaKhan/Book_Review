@@ -16,13 +16,12 @@ $sql=mysqli_query($conn,"SELECT * FROM `user` where email='$email'");
 		echo '<script>alert("Passwords don\'t match.")</script>'; 
 		exit;
 	}elseif(isset($_POST['save'])){
-		$imgpath="";
 		$first_name=test_input($first_name);
 		$last_name=test_input($last_name);
 		$email=test_input($email);
 		$hash=password_hash($pass, PASSWORD_DEFAULT);
 		
-		$query="INSERT INTO `user`(`fname`, `lname`, `email`, `password`, `user_type`, `profile_pic`) VALUES ('$first_name', '$last_name', '$email', '$hash', '$user_type', '$imgpath')";
+		$query="INSERT INTO `user`(`fname`, `lname`, `email`, `password`, `user_type`) VALUES ('$first_name', '$last_name', '$email', '$hash', '$user_type')";
 		$sql=mysqli_query($conn,$query)or die("Could Not Perform the Query");
 		
 		$cookie_name = "book_id";

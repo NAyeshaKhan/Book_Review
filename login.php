@@ -87,7 +87,6 @@
 			$_SESSION["fname"]=$row['fname'];
 			$_SESSION["lname"]=$row['lname'];
 			$_SESSION["user_type"]=$row['user_type'];
-			$_SESSION["profile_pic"]=$row['profile_pic'];
 			$_SESSION["isLogged"]=True;
 			if($row['user_type']=="admin"){
 				header("Location: admin_dashboard.php");
