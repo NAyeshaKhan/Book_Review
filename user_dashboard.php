@@ -25,10 +25,13 @@
 		.card{
 			width: 100%;
 		}
+		.container{
+		  padding-top:20rem;
+		}
 </style>
 
 <body style="background-color:#F4F1EA;">
-	<div class="card" style="text-align:center;">
+	<div class="container" style="text-align:center;">
 		<br><h4><b>Hi <?php echo " ",$_SESSION["fname"] ?> <?php echo $_SESSION["lname"] ?>!</b></h4>
 			<h4><b><i>Browse Through Different Genres</i></b></h4>
 			<div class="card">

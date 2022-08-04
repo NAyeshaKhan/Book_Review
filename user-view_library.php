@@ -26,10 +26,16 @@
 	}
 	
 	@media only screen and (max-width: 600px) {
-		body,.cardA{
-		  width: 100%;
-		  
+		.card{
+		  padding-top:20rem;
 		}
+		h3{
+			padding:1rem;
+		}
+		body{
+			width:100%;
+		}
+	}
 </style>
 
 <?php include('header.php'); ?>
@@ -43,8 +49,12 @@
 					$book_id=$array[4];
 					$page = file_get_contents("https://www.googleapis.com/books/v1/volumes/$book_id");
 					$data = json_decode($page, true);?>
-					<img src="<?php echo $data['volumeInfo']['imageLinks']['thumbnail']; ?>" style="margin:5px;vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
-					<a href="view_review.php?id=<?php echo $array[4]; ?>"><div class="card-header"><b>Title:</b> <?php echo $data['volumeInfo']['title'];?></div></a>
+					<?php if(isset($data['volumeInfo']['imageLinks']['thumbnail'])): ?>
+						<img src="<?php echo $data['volumeInfo']['imageLinks']['thumbnail']; ?>" style="margin:5px;vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img><a href="view_review.php?id=<?php echo $data['items'][$i]['id']; ?>">
+					<?php else: ?>	
+						<img src="img/book.png" style="margin:5px;vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img><a href="view_review.php?id=<?php echo $data['items'][$i]['id']; ?>">
+					<?php endif; ?>	
+				<a href="view_review.php?id=<?php echo $array[4]; ?>"><div class="card-header"><b>Title:</b> <?php echo $data['volumeInfo']['title'];?></div></a>
 					<div class="card-body">
 						<h5 class="card-title"><b><?php echo $data['volumeInfo']['title'];?></b></h5>
 						<div><p class="card-text"><i>Author(s): <?php echo @implode(",", $data['volumeInfo']['authors']); ?></i></p></div>

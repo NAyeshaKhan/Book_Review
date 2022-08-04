@@ -2,6 +2,7 @@
 	include 'database.php';
 	session_start();
 	include 'user_auth.php';
+	include 'header.php';
 	$id=$_SESSION['id'];
 	$cookie_name="book_id";
 		
@@ -20,19 +21,48 @@
   <title>Suggested Users</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
 </head>
-<?php include('header.php'); ?>
+<style>
+	@media only screen and (max-width: 600px) {
+		.card{
+		  padding:5rem;
+		}
+		.container{
+		  padding-top:15rem;
+		}
+		.card-header{
+		  float:left;
+		  width:30%
+		}
+		.card-body{
+		  float:right;
+		  width:40%
+		}
+		.cardA,.button{
+			margin:1rem;
+			float:right;
+		}
+		.cardA{
+			width:100%;
+		}
+		.img{
+			width:60%;
+		}
+		h3{
+			padding:1rem;
+		}
+	}
+</style>
 <body style="background-color:#F4F1EA;">
-	<div class="card">
-	<h3>See What Your Fellow Reviewers Are Reading!</h3>
-	<div class="card" >
+	<div class="container">
+		<div class="card" >
 		<?php if ($user_rows->num_rows > 0): ?>
+			<h3>See What Your Fellow Reviewers Are Reading!</h3>
 			<h4 style="text-align:center;">Reviewers with similar interests to yours:</h4>
 			<?php while($array=mysqli_fetch_row($user_rows)): ?>
 				<div class="cardA" style="float:left;margin:1rem;padding:0.5rem;">
 					<div class="card-header">
-						<div style="float:left;width:28%;">
+						<div class="img" style="float:left;width:28%;">
 							<img src="img/default-user.jpg" style="vertical-align: middle; width: 50px; height: 50px; border-radius: 50%; "></img>
 							<?php echo $array[1];?> <?php echo $array[2];?>
 							<?php $sql=mysqli_query($conn,"SELECT * FROM following WHERE user_id_1='$id' AND user_id_2='$array[0]'");

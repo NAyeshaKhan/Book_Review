@@ -23,17 +23,28 @@
 		width:100%;
 		margin:2rem;
 	}
-	
+	h3{
+		text-align:center;
+		padding:1rem;
+	}
 	@media only screen and (max-width: 600px) {
 		body,.cardA{
 		  width: 100%;
-		  
+		}
+		
+		h3{
+			padding:1rem;
+		}
+		
+		.card{
+			padding-top:20rem;
+		}
 	}
 </style>
 <?php include('header.php'); ?>
 <body style="background-color:#F4F1EA;">
 	<div class="card">
-		<h3 style="text-align:center;"><?php echo $_SESSION['fname'] ?> <?php echo $_SESSION['lname'] ?>'s Reviews</h3>
+		<h3><?php echo $_SESSION['fname'] ?> <?php echo $_SESSION['lname'] ?>'s Reviews</h3>
 		<?php if ($user_reviews->num_rows > 0): ?>
 			<?php while($array=mysqli_fetch_row($user_reviews)): ?>
 				<div class="cardA" style="margin:2rem;">

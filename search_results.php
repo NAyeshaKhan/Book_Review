@@ -32,6 +32,10 @@
 		margin:1rem;
 	}
 	
+	h3{
+		padding:1rem;
+		text-align:center;
+		}
 	
 	@media only screen and (max-width: 600px) {
 		.card-body{
@@ -42,13 +46,19 @@
 			margin:1rem;
 			float:right;
 		}
+		h3{
+			padding:1rem;
+		}
+		.container{
+			padding-top:20rem;
+		}
 		button{
 			margin:1rem;
 		}
 </style>
 <body style="background-color:#F4F1EA;">
 	<div class="container">
-		<h3 style="text-align:center;">Results for "<?php echo $search_url; ?>"</h3>
+		<h3>Results for "<?php echo $search_url; ?>"</h3>
 		<?php for ($i = 0; $i < 10; $i++): ?>
 			<div class="cardA" style="margin-left:10rem;">
 				<?php if(isset($data['items'][$i]['volumeInfo']['imageLinks']['thumbnail'])): ?>

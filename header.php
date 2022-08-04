@@ -10,42 +10,41 @@
 </head>
 <style>
 	*{
-	font-family: "Verdana", sans-serif;	
+		font-family: "Verdana", sans-serif;	
 	}
 
 	body {
-	background-color:white;
-	margin-left: 100px;
-	width:80%;
+		margin-left: 100px;
+		width:80%;
 	}
 
 	.card{
-	margin-left:80px;
+		margin-left:80px;
 	}
 
 
 	.header{
-	color:white; 
-	font-size: 10px; 
-	text-align:center;
-	padding:5 px;
-	top:0;
+		color:white; 
+		font-size: 10px; 
+		text-align:center;
+		padding:5 px;
+		top:0;
 	}
 	
 	.sidebar{
-	background-color: #fdfcdc;
-	height:100%;
-	left:0; 
-	float:left; 
-	position:fixed; 
-	width:15%; 
-	padding:2px;
-	text-align:left;
+		background-color: #fdfcdc;
+		height:100%;
+		left:0; 
+		float:left; 
+		position:fixed; 
+		width:15%; 
+		padding:2px;
+		text-align:left;
 	}
 
 	.sidebar a{
-	color:black;
-	background-color:#fdfcdc;
+		color:black;
+		background-color:#fdfcdc;
 	}
 
 
@@ -54,7 +53,7 @@
 	}
 	
 	.cardA{
-		width:30rem; min-height:20rem; 
+		width:80%; min-height:20rem; 
 		margin:1rem; padding:2rem;		
 		background-color:white;
 		border-radius:25px;
@@ -76,11 +75,24 @@
 	}
 
 	@media only screen and (max-width: 600px) {
-	.navbar{
-	  width: 100%;
+		.sidebar{
+		  width: 100%;
+		  height:10%;
+		}
+		
+		body{
+			width:100%;
+			height:50%;
+		}
+		
+		.card,.container{
+			width:100%;
+			
+		}
+		table{
+			width:50%;
+		}
 	}
-
-	
 </style>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" style="position:fixed;">
@@ -105,8 +117,7 @@
 						<button type="submit" name="save" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
 					</form>
 			</div>
-
-			  <li style="float:right;"><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+				<li style="float:right;"><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span></a></li>
 			</ul>  
 		</div>
 		<?php endif; ?>
@@ -133,6 +144,5 @@
 	  </li>
     </ul>
   </nav>
-  <?php endif; ?>
-      
+  <?php endif; ?>   
 </div>

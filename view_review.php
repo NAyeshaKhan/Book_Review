@@ -38,7 +38,11 @@
 			width: 100%;
 			margin:2rem;
 		}
-
+		.container{
+		  padding-top:20rem;
+		}
+	}
+</style>
 </style>
 
 <body style="background-color:#F4F1EA;">

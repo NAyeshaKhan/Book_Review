@@ -22,6 +22,14 @@
 		width:100%;
 		margin:2rem;
 	}
+	@media only screen and (max-width: 600px) {
+		.card{
+		  padding-top:20rem;
+		}
+		h3{
+			padding:1rem;
+		}
+	}
 </style>
 <body style="background-color:#F4F1EA;">
 	<div class="card">
