@@ -2,6 +2,7 @@
 	include 'database.php';
 	session_start();
 	include 'admin_auth.php';
+	include 'header.php';
 	$library_results= mysqli_query($conn,"SELECT library.library_id, library.user_id, user.fname, user.lname, library.title FROM library INNER JOIN user ON user.user_id=library.user_id");
 ?>
 
@@ -13,9 +14,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
 </head>
-<?php include('header.php'); ?>
+<style>
+	button{
+		margin:0.5rem;
+	}
+	table{
+		margin-left:10rem;
+	}
+	@media only screen and (max-width: 600px) {
+		.container{
+			padding-top:20rem;
+		}
+		
+		h3{
+			padding:1rem;
+		}
+		button{
+			margin:0.5rem;
+		}
+	}
+</style>
 <body style="background-color:#F4F1EA;">
-	<div class="card">
+	<div class="card" style="text-align:center;">
 		<div class="container">
 			<h3>Libraries</h3>
 			<div  style="text-align:center;">
@@ -25,7 +45,6 @@
 				<thead>
 					<tr>
 						<th scope="col" style="text-align:center;">Library ID</th>
-						<th scope="col" style="text-align:center;">User ID</th>
 						<th scope="col" style="text-align:center;">User</th>
 						<th scope="col" style="text-align:center;">Title</th>
 						<th scope="col" style="text-align:center;">Action</th>
@@ -36,7 +55,6 @@
 						<?php while($array=mysqli_fetch_row($library_results)): ?>
 							<tr style="width:100px;">
 								<td scope="row"><b><?php echo $array[0];?></b></th>
-								<td><i><?php echo $array[1];?></i></td>
 								<td><?php echo $array[2];?> <?php echo $array[3];?></td>
 								<td><?php echo $array[4];?></td>
 								<td><a href= "admin-view_library.php?id=<?php echo $array[0]; ?> ">
@@ -52,11 +70,8 @@
 					<?php endif; ?>
 				</tbody>
 			</table>
-			<div  style="text-align:center;">
-				<a href="admin_dashboard.php"><button type="button" class="btn btn-success">Return To Dashboard</button></a>
-			</div>
+			<a href="admin_dashboard.php"><button type="button" class="btn btn-success">Return To Dashboard</button></a>
 		</div>
-		
 	</div>
 </body>
 
