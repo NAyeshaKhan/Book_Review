@@ -69,7 +69,7 @@
 								if($sql->num_rows == 0): ?>
 								<a href= "follow_user.php?id=<?php echo $array[0]; ?> "><button class="btn btn-success" style="margin:2rem;">Follow</button></a>
 								<?php else: ?>
-								<a href= "unfollow_user.php?id=<?php echo $array[0]; ?> "><button class="btn btn-success" style="margin:2rem;">Unfollow</button></a>
+								<a href= "unfollow_user.php?id=<?php echo $array[0]; ?> "><button class="btn btn-warning" style="margin:2rem;">Unfollow</button></a>
 							<?php endif; ?>
 						</div>
 					</div>
@@ -81,11 +81,11 @@
 								<div class="card-body">
 									<img src="img/book.png" style="vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
 									<h5 class="card-title">
-										<a href="view_review.php?id=<?php echo $review_arr[2];?>"><b><?php echo $review_arr[3];?></b></a></h5>
+									<a href="view_review.php?id=<?php echo $review_arr[2];?>"><b><?php echo $review_arr[3];?></b></a></h5>
 									<div><p class="card-text"><?php echo $review_arr[4];?></p></div>
 								</div>
 						<?php endif; ?>
-					</div>	
+					</div>
 				</div>
 			<?php endwhile; ?>
 		<?php else: ?>
