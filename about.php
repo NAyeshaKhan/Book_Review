@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	include 'database.php';
+	include('header.php');
 ?>
 
 <!DOCTYPE html>
@@ -11,12 +12,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/overlay.css">
 </head>
-<?php include('header.php'); ?>
-
-
-<?php if ($_SESSION["isLogged"]): ?>
+<style>
+	
+	@media only screen and (max-width: 600px) {
+		.containerX, .middle{
+			padding-top:45rem;
+			width:100%;
+			margin-left:0rem;
+			
+		}
+	}
+</style>
 <body style="background-color:#F4F1EA;margin-left: 200px;">
-<?php endif; ?>
 	<div class="containerX" style="width:100%;height:100%;">
 		<img src="img/book_stack.jpg" alt="Books on a shelf" class="image" >
 		<div class="middle">

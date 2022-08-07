@@ -13,7 +13,7 @@
 		font-family: "Verdana", sans-serif;	
 	}
 
-	body {
+	body{
 		margin-left: 100px;
 		width:80%;
 	}
@@ -69,9 +69,10 @@
 	}
 	
 	table{
-		width:80px; 
+		width:80%; 
 		text-align:center;
 		float:right;
+		overflow-x:auto;
 	}
 
 	@media only screen and (max-width: 600px) {
@@ -83,15 +84,14 @@
 		body{
 			width:100%;
 			height:50%;
+			margin:0rem;
 		}
 		
 		.card,.container{
 			width:100%;
-			
+			margin:0rem;
 		}
-		table{
-			width:50%;
-		}
+		
 	}
 </style>
 

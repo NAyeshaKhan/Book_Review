@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	include 'database.php';
+	include 'header.php';
 ?>
 
 <!DOCTYPE html>
@@ -8,14 +9,20 @@
 <head>
   <title>Welcome To BookRev</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/overlay.css">
 </head>
-
-<?php include('header.php'); ?>
-<?php if ($_SESSION["isLogged"]): ?>
+<style>
+	
+	@media only screen and (max-width: 600px) {
+		.containerX, .middle{
+			padding-top:20rem;
+			width:100%;
+			margin-left:0rem;
+		}
+	}
+</style>
 <body  style="background-color:#F4F1EA;margin-left: 200px;">
-<?php endif; ?>
 	<div class="containerX">
 		  <img src="img/book_about.jpg" alt="Books on a shelf" class="image" style="width:100%">
 		  <div class="middle">

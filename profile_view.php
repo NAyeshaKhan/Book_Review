@@ -34,6 +34,12 @@
 	.form-outline{
 		width:80%;
 	}
+	
+	@media only screen and (max-width: 600px) {
+		.card{
+			width: 100%;
+			padding-top:7rem;
+		}
 </style>
 <body style="background-color:#F4F1EA;">
 	<div class="card" style="text-align:center;">
