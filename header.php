@@ -146,3 +146,4 @@
   </nav>
   <?php endif; ?>   
 </div>
+</html>

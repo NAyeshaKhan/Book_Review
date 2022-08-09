@@ -1,5 +1,6 @@
 <?php
-    session_start();
+    include 'database.php';
+	session_start();
 	$_SESSION["isLogged"]=False;
 	include('header.php'); 
 ?>
@@ -8,7 +9,6 @@
 <html lang="en">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/auth_style.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
 	<title>Welcome to Book Review Portal</title>
 	
@@ -74,7 +74,7 @@
 <?php
 	if(isset($_POST['save'])){
 		extract($_POST);
-		include 'database.php';
+		
 		$email = $mysqli->real_escape_string($_POST['email']);
 		$stmt = $mysqli->prepare("SELECT * FROM `user` WHERE email = ?");
 		$stmt->bind_param("s", $_POST['email']);
