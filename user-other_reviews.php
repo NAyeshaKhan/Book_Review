@@ -6,13 +6,25 @@
 	$id=$_SESSION['id'];
 	$cookie_name="book_id";
 		
-	if ($_COOKIE[$cookie_name]!='XXXX'){
+	if (isset($_COOKIE[$cookie_name])){
 		#Fetches users who've made reviews on same book as user's most recent review
 		$user_rows= mysqli_query($conn,"SELECT * FROM user WHERE user_id IN( SELECT user.user_id FROM user INNER JOIN review ON user.user_id=review.user_id WHERE user.user_id <> '$id' AND book_id='$_COOKIE[$cookie_name]') LIMIT 4");
 	}else{
 		#Fetches users who've made reviews
 		$user_rows= mysqli_query($conn,"SELECT * FROM user WHERE user_id IN( SELECT user.user_id FROM user INNER JOIN review ON user.user_id=review.user_id WHERE user.user_id <> '$id') LIMIT 4");
 	}
+	
+	/*
+	if (isset($_COOKIE[$cookie_name])){
+		#Fetches users who've made reviews on same book as user's most recent review
+		$user_rows= mysqli_query($conn,"SELECT * FROM user WHERE user_id IN( SELECT user.user_id FROM user INNER JOIN review ON user.user_id=review.user_id WHERE user.user_id <> '$id' AND book_id='$_COOKIE[$cookie_name]') LIMIT 4");
+	}
+	
+	if(empty(mysqli_fetch_row($user_rows)) || !isset($_COOKIE[$cookie_name])){
+		#Fetches users who've made any reviews
+		$user_rows= mysqli_query($conn,"SELECT * FROM user WHERE user_id IN( SELECT user.user_id FROM user INNER JOIN review ON user.user_id=review.user_id WHERE user.user_id <> '$id') LIMIT 4");
+	}
+	*/
 ?>
 
 <!DOCTYPE html>
@@ -89,7 +101,7 @@
 				</div>
 			<?php endwhile; ?>
 		<?php else: ?>
-			<p>No User Data Found</p>
+			<h4 style="text-align:center;">No Users to Suggest! Why don't you make some reviews first?</h4>
 		<?php endif; ?>
 	</div>
 </div>
