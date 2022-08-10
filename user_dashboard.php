@@ -36,6 +36,7 @@
 		image{
 			margin:1rem;
 		}
+	}		
 </style>
 
 <body style="background-color:#F4F1EA;">
@@ -70,7 +71,7 @@
 					  <?php endfor; ?>
 				</div>
 			<?php endforeach; ?>
-		</div>	
+		</div>
 		<div class="card" >
 				<?php while($array=mysqli_fetch_row($following)): ?>
 					<div class="cardA" style="float:left;margin:1rem;padding:0.5rem;">
@@ -102,10 +103,16 @@
 									<?php else: ?>
 										<img src="img/book.png" style="margin:5px;vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
 									<?php endif; ?>
-									
-									<h5 class="card-title">
-									<a href="view_review.php?id=<?php echo $review_arr[2];?>"><b><?php echo $review_arr[3];?></b></a></h5>
-									<div><p class="card-text"><?php echo $review_arr[4];?></p></div>
+									<div class="card-body">
+										<h5 class="card-title"><a href="view_review.php?id=<?php echo $review_arr[2];?>"><b><?php echo $review_arr[3];?></b></a></h5>
+										<div><p class="card-text"><?php echo $review_arr[4];?></p></div>
+										<div style="float:right;">
+											<div>
+												<a href= "add_review.php?id=<?php echo $book_id; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button></a>
+												<a href= "add_to_library.php?id=<?php echo $genre_data['items'][$i]['id']; ?> "><button class="btn btn-success"><span class="glyphicon glyphicon-bookmark"></span></button></a>
+											</div>
+										</div>
+									</div>
 								</div>
 							<?php endif; ?>
 						</div>
@@ -114,5 +121,4 @@
 		</div>
 	</div>
 </body>
-
 </html>
