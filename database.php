@@ -1,7 +1,7 @@
 <?php
 	$host="localhost";
-	$user="user";
-	$password="password";
+	$user="root";
+	$password="";
 	$db="book_review";
 	
 	$conn=mysqli_connect($host, $user, $password, $db);

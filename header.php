@@ -1,3 +1,8 @@
+<?php
+    if(!isset($_SESSION['isLogged'])){
+        $_SESSION['isLogged']=False;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
