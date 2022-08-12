@@ -56,7 +56,7 @@
 								<?php if(isset($genre_data['items'][$i]['volumeInfo']['imageLinks']['smallThumbnail'])): ?>
 									<img src="<?php echo $genre_data['items'][$i]['volumeInfo']['imageLinks']['smallThumbnail']; ?>" style="vertical-align: middle; width: 100px; height: 100px; border-radius: 5px;float:left; "></img>
 								<?php else: ?>	
-									<img src="img/book.png" style="vertical-align: middle; width: 100px; height: 100px; border-radius: 5px;float:left; "></img><a href="view_review.php?id=<?php echo $data['items'][$i]['id']; ?>">
+								<img src="https://img.icons8.com/color/100/000000/book.png" style="vertical-align: middle; width: 100px; height: 100px; border-radius: 5px;float:left; "></img><a href="view_review.php?id=<?php echo $data['items'][$i]['id']; ?>">
 								<?php endif; ?>	
 								<div style="width:100%;float:left;">
 								<figcaption style="width:15rem;overflow:auto;"><b><?php echo $genre_data['items'][$i]['volumeInfo']['title']; ?></b></figcaption></a>

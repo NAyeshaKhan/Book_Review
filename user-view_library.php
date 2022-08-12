@@ -52,7 +52,7 @@
 					<?php if(isset($data['volumeInfo']['imageLinks']['thumbnail'])): ?>
 						<img src="<?php echo $data['volumeInfo']['imageLinks']['thumbnail']; ?>" style="margin:5px;vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img><a href="view_review.php?id=<?php echo $data['items'][$i]['id']; ?>">
 					<?php else: ?>	
-						<img src="img/book.png" style="margin:5px;vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img><a href="view_review.php?id=<?php echo $data['items'][$i]['id']; ?>">
+						<img src="https://img.icons8.com/color/150/000000/book.png" style="margin:5px;vertical-align: middle;border-radius: 5px;float:left; "></img><a href="view_review.php?id=<?php echo $data['items'][$i]['id']; ?>">
 					<?php endif; ?>	
 				<a href="view_review.php?id=<?php echo $array[4]; ?>"><div class="card-header"><b>Title:</b> <?php echo $data['volumeInfo']['title'];?></div></a>
 					<div class="card-body">

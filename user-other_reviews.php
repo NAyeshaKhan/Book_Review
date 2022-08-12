@@ -54,7 +54,7 @@
 			margin:1rem;
 			float:right;
 		}
-		.cardA{
+		.cardA, .card-body{
 			width:100%;
 		}
 		.img{
@@ -91,7 +91,7 @@
 							$review_arr=mysqli_fetch_row($review);
 							if (!empty($review_arr)):?>
 								<div class="card-body">
-									<img src="img/book.png" style="vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
+									<img src="https://img.icons8.com/color/150/000000/comic-book.png" style="vertical-align: middle; border-radius: 5px;float:left; ">
 									<h5 class="card-title">
 									<a href="view_review.php?id=<?php echo $review_arr[2];?>"><b><?php echo $review_arr[3];?></b></a></h5>
 									<div><p class="card-text"><?php echo $review_arr[4];?></p></div>
