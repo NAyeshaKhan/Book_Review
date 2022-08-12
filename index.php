@@ -13,16 +13,22 @@
   <link rel="stylesheet" href="css/overlay.css">
 </head>
 <style>
-	
+	body{
+		margin-left:200px;
+		background-color:#F4F1EA;
+	}
 	@media only screen and (max-width: 600px) {
 		.containerX, .middle{
-			padding-top:20rem;
+			padding-top:23rem;
 			width:100%;
-			margin-left:0rem;
+			margin:80px;
+		}
+		body{
+			margin:0px;
 		}
 	}
 </style>
-<body  style="background-color:#F4F1EA;margin-left: 200px;">
+<body>
 	<div class="containerX">
 		  <img src="img/book_about.jpg" alt="Books on a shelf" class="image" style="width:100%">
 		  <div class="middle">
@@ -35,13 +41,13 @@
 			<?php endif; ?>
 		  </div>
 		  <?php
-		  $cookie_name="book_id";
+		  /*$cookie_name="book_id";
 		  if (isset($_COOKIE[$cookie_name])): ?>
 			<p><?php echo "Cookie named '" . $cookie_name . "' is set!";?></p>
 			<p><?php echo "Value is: " . $_COOKIE[$cookie_name];?></p>
 		  <?php else: ?>
 			<p><?php echo "Cookie named '" . $cookie_name . "' is not set!";?></p>
-		  <?php endif; ?>
+		  <?php endif; */?>
 	</div>
 </body>
 

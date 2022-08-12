@@ -60,7 +60,7 @@
 		.img{
 			width:60%;
 		}
-		h3{
+		h3,h4{
 			padding:1rem;
 		}
 	}
@@ -101,10 +101,9 @@
 				</div>
 			<?php endwhile; ?>
 		<?php else: ?>
-			<h4 style="text-align:center;">No Users to Suggest! Why don't you make some reviews first?</h4>
+			<h4 style="text-align:center;margin:2rem;">No Users to Suggest! Why don't you make some reviews first?</h4>
 		<?php endif; ?>
 	</div>
 </div>
 </body>
-
 </html>

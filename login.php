@@ -29,6 +29,7 @@
 		width:70%;
 		margin:5rem 15rem;
 		padding:0.5rem;
+		background-color:white;
 	}
 	
 	@media only screen and (max-width: 600px) {

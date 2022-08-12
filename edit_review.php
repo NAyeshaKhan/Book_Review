@@ -29,13 +29,15 @@
 		if($desc==NULL){
 			$sql = $conn->prepare("UPDATE `review` SET `title`= ? WHERE review_id=?");
 			$sql->bind_param("ss", $title , $review);
+		}elseif($title==NULL){
+			$sql = $conn->prepare("UPDATE `review` SET `description`= ? WHERE review_id=?");
+			$sql->bind_param("ss", $desc , $review);
 		}else if($title!=NULL && $desc!=NULL){
 			$sql = $conn->prepare("UPDATE `review` SET `title`= ?, `description`= ? WHERE review_id=?");
 			$sql->bind_param("sss", $title , $desc, $review);
 		}
 		
 		$sql->execute();
-		
 		if($_SESSION['user_type']=='admin'){
 			header("Location: admin-review_info.php");
 		}else if($_SESSION['user_type']=='user'){

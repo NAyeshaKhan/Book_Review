@@ -10,8 +10,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="js/book_script.js"></script>
-  
 </head>
 <style>
 	*{
@@ -19,7 +17,7 @@
 	}
 
 	body{
-		margin-left: 100px;
+		margin-left: 90px;
 		width:80%;
 	}
 
@@ -103,7 +101,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" style="position:fixed;">
 	<div style="float:left;">
 		<a href="index.php">
-			 <img alt="Website icon" src="img/bookrev_icon.png">
+			<img alt="Website icon" style="margin:1px;" src="https://img.icons8.com/color/48/000000/storytelling.png"/>
 		</a>
 	</div>
 		<div class="container-fluid navbar-header navbar-right">
@@ -112,7 +110,7 @@
 				
 				<div class="container-fluid navbar-header navbar-right">
 					<ul class="nav navbar-nav">
-						  <li><a href="about.php"><span class="glyphicon glyphicon-info-sign"></span> About Us</a></li>
+						  <li><a style="float:right;" href="about.php"><span class="glyphicon glyphicon-info-sign"></span> About Us</a></li>
 					</ul>
 				</div>
 			<?php else: ?>

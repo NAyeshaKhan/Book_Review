@@ -14,16 +14,18 @@
 		$title=mysqli_real_escape_string($conn,$title);
 		
 		$desc=trim($description);
+		$desc=htmlspecialchars($description);
 		$desc=mysqli_real_escape_string($conn,$desc);
 		
 		$sql=mysqli_query($conn,"SELECT FROM `review` WHERE user_id='$user_id' AND book_id='$book_id'");
-		//$sql->num_rows > 0
-		if($sql->num_rows > 0){
+		
+		if(!empty($sql)){
 			echo '<script>alert("Review for this book already exists!")</script>'; 
 			exit;
 		}else{
 			$sql="INSERT INTO `review` (`user_id`, `book_id`, `title`, `description`) VALUES ('$user_id', '$book_id', '$title', '$description')";
-			$stmnt= mysqli_query($conn,$sql)or die("<h2 align='center'>Review Already Exists.</h2>");
+			$stmnt= mysqli_query($conn,$sql)or die("<h2 align='center'>Review Could not be Added.</h2>");
+			
 			$cookie_name = "book_id";
 			$cookie_value = $book_id;
 			setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
