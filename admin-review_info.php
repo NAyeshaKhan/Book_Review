@@ -56,7 +56,7 @@
 <body style="background-color:#F4F1EA;">
 	<div class="card" style="text-align:center;">
 		<div class="container">
-			<h3>Reviews</h3>
+			<h3>Reviews (<?php echo $review_results->num_rows; ?>)</h3>
 			<div style="text-align:center;">
 				<a href= "add_review.php?id=XXXX"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Review</button></a>
 			</div>

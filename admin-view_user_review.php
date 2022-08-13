@@ -45,13 +45,13 @@
 </style>
 
 <body>
-	<h3><?php echo $row['fname'] ?> <?php echo $row['lname'] ?>'s Reviews</h3>
+	<h3><?php echo $row['fname'] ?> <?php echo $row['lname'] ?>'s Reviews (<?php echo $user_reviews->num_rows; ?>)</h3>
 		<div class="card" style="width:100%;">
 			<div class="card" style="width:90%;">
 			<?php if ($user_reviews->num_rows > 0 && $row['book_id']!=NULL): ?>
 				<?php while($array=mysqli_fetch_row($user_reviews)): ?>
 					<div class="cardA">
-						<img src="img/book.png" style="vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
+						<img src="https://img.icons8.com/color/150/000000/comic-book.png" style="margin:5px;vertical-align: middle;border-radius: 5px;float:left;/">
 					<a href="view_review.php?id=<?php echo $array[4]; ?>"><div class="card-header">Book ID: <?php echo $array[4];?></div></a>
 						<div class="card-body">
 							<h5 class="card-title"><b><?php echo $array[5];?></b></h5>

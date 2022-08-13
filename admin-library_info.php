@@ -12,7 +12,6 @@
   <title>BookRev Admin Panel</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
 </head>
 <style>
 	button{
@@ -37,7 +36,7 @@
 <body style="background-color:#F4F1EA;">
 	<div class="card" style="text-align:center;">
 		<div class="container">
-			<h3>Libraries</h3>
+			<h3>Libraries (<?php echo $library_results->num_rows; ?>)</h3>
 			<div  style="text-align:center;">
 				<a href="add_library.php"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Library</button></a>
 			</div>

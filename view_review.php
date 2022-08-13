@@ -88,7 +88,7 @@
 						<?php endif; ?>
 					</div>
 					<div>
-						<img src="img/book.png" style="vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
+						<img src="https://img.icons8.com/color/150/000000/comic-book.png" style="margin:5px;vertical-align: middle;border-radius: 5px;float:left;/">
 						<div class="card-header"><b>Title:</b> <?php echo $data['volumeInfo']['title'];?></div>
 						<div class="card-body">
 							<h5 class="card-title"><b><?php echo $array[4];?></b></h5>

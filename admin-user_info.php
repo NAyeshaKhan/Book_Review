@@ -14,7 +14,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
-@media only screen and (max-width: 600px) {
+	.container{
+		margin-left:2rem;
+	}
+	
+	@media only screen and (max-width: 600px) {
 		.container{
 			padding-top:20rem;
 		}
@@ -24,13 +28,12 @@
 		h3{
 			padding:1rem;
 		}
-		
 	}
 </style>
 <body style="background-color:#F4F1EA;">
 	<div class="card" style="text-align:center;">
 		<div class="container">
-			<h3>Users</h3>
+			<h3>Users (<?php echo $user_results->num_rows; ?>)</h3>
 			<table class="table table-condensed">
 				<thead>
 					<tr>
@@ -63,5 +66,4 @@
 		</div>
 	</div>
 </body>
-
 </html>
