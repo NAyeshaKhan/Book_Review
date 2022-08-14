@@ -29,7 +29,7 @@
 		if($desc==NULL){
 			$sql = $conn->prepare("UPDATE `review` SET `title`= ? WHERE review_id=?");
 			$sql->bind_param("ss", $title , $review);
-		}elseif($title==NULL){
+		}else if($title==NULL){
 			$sql = $conn->prepare("UPDATE `review` SET `description`= ? WHERE review_id=?");
 			$sql->bind_param("ss", $desc , $review);
 		}else if($title!=NULL && $desc!=NULL){
@@ -109,4 +109,3 @@
 		</div>
 	</body>
 </html>
-

@@ -10,7 +10,7 @@
 		$title=htmlspecialchars($title);
 		$title=mysqli_real_escape_string($conn,$title);
 		
-		$stmnt= mysqli_query($conn,"INSERT INTO `library` (`user_id`, `title`) VALUES ('$id', '$title')")or die("Could not create Library");;
+		$stmnt= mysqli_query($conn,"INSERT INTO `library` (`user_id`, `title`) VALUES ('$id', '$title')")or die("Could not create Library");
         
 		if($_SESSION['user_type']=='admin'){
 			header("Location: admin-library_info.php");
