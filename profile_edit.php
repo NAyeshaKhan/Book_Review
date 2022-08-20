@@ -15,7 +15,7 @@
 
     }else if(isset($_POST['save_pass'])){
 		if($_POST['pass']!=$_POST['cpass']){
-			echo "<alert>Passwords do not match</alert>";
+			echo '<script>alert("Passwords do not match")</script>';
 		}else{
 			extract($_POST);
 			$hash=password_hash($_POST['pass'], PASSWORD_DEFAULT);

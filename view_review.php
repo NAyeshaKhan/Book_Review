@@ -78,14 +78,6 @@
 					<div style="float:left;width:7rem;">
 						<img src="img/default-user.jpg" style="vertical-align: middle; width: 50px; height: 50px; border-radius: 50%; "></img>
 						<div class="card-header"><b><?php echo $array[1];?> <?php echo $array[2];?></b></div>
-						<?php 
-							$my_id=$_SESSION['id']; 
-							$sql=mysqli_query($conn,"SELECT * FROM following WHERE user_id_1='my_id' AND user_id_2='$array[0]'");
-							if($sql->num_rows == 0): ?>
-							<a href= "follow_user.php?id=<?php echo $array[0]; ?> "><button class="btn btn-success">Follow</button></a>
-							<?php else: ?>
-							<a href= "unfollow_user.php?id=<?php echo $array[0]; ?> "><button class="btn btn-success">Unfollow</button></a>
-						<?php endif; ?>
 					</div>
 					<div>
 						<img src="https://img.icons8.com/color/150/000000/comic-book.png" style="margin:5px;vertical-align: middle;border-radius: 5px;float:left;/">

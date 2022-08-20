@@ -10,7 +10,7 @@ $sql=mysqli_query($conn,"SELECT * FROM `user` where email='$email'");
 		echo '<script>alert("Name must consist of only letters.")</script>'; 
 		exit;
 	}elseif(strlen($pass)<6){
-		echo '<script>alert("Password must consist of mor than 6 characters.")</script>'; 
+		echo '<script>alert("Password must consist of more than 6 characters.")</script>'; 
 		exit;
 	}elseif($cpass!=$pass){
 		echo '<script>alert("Passwords don\'t match.")</script>'; 
@@ -24,10 +24,10 @@ $sql=mysqli_query($conn,"SELECT * FROM `user` where email='$email'");
 		$query="INSERT INTO `user`(`fname`, `lname`, `email`, `password`, `user_type`) VALUES ('$first_name', '$last_name', '$email', '$hash', '$user_type')";
 		$sql=mysqli_query($conn,$query)or die("Could Not Perform the Query");
 		
-		$cookie_name = "book_id";
+		/*$cookie_name = "book_id";
 		$cookie_value = 'XXXX';
 		setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-		
+		*/
 		header ("Location: login.php?status=success");
 	}else {
 		echo '<script>alert("Invalid User Information. Please retry.")</script>';

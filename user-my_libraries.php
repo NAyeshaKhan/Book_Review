@@ -40,7 +40,7 @@
 		<?php if ($library_rows->num_rows > 0): ?>
 			<?php while($array=mysqli_fetch_row($library_rows)): ?>
 				<div class="cardA">
-					<img src="img/book.png" style="vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
+					<img src="https://img.icons8.com/color/150/000000/comic-book.png" style="vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
 					<a href="user-view_library.php?id=<?php echo $array[0]; ?>"><div class="card-header"><b>Title:</b> <?php echo $array[2];?></div></a>
 					<div class="card-body">
 						<h5 class="card-title"><i>View Your Books</i></h5>
