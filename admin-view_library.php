@@ -54,7 +54,7 @@
 							<tr style="width:100px;">
 								<td scope="row"><b><?php echo $array[0];?></b></th>
 								<td><a href= "view_review.php?id=<?php echo $array[4]; ?> "><?php echo $array[4];?></a></td>
-								<td><a href= "remove_from_library.php?id=<?php echo $array[2]; ?> "><button type="button" class="btn btn-success">Delete</button></a></td>
+								<td><a href= "remove_from_library.php?lib_id=<?php echo $array[0]; ?>&id=<?php echo $array[4]; ?>"><button type="button" class="btn btn-success">Delete</button></a></td>
 							</tr>
 						<?php endwhile; ?>
 					<?php else: ?>

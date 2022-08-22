@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Review</title>
-    <link rel="stylesheet" href="css/auth_style.css">
-</head>
-
 <?php 
     include 'database.php';
     session_start();
@@ -45,6 +36,14 @@
 		}
     }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Review</title>
+</head>
 
 <style>
 	label{

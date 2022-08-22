@@ -17,7 +17,7 @@
 		$desc=htmlspecialchars($description);
 		$desc=mysqli_real_escape_string($conn,$desc);
 		
-		$sql=mysqli_query($conn,"SELECT FROM `review` WHERE user_id='$user_id' AND book_id='$book_id'");
+		$sql=mysqli_query($conn,"SELECT * FROM `review` WHERE user_id='$user_id' AND book_id='$book_id'");
 		
 		if(!empty($sql)){
 			echo '<script>alert("Review for this book already exists!")</script>'; 
