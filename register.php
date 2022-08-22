@@ -1,3 +1,7 @@
+<?php 
+	include('header.php'); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,10 +38,7 @@
 			margin:5rem;
 		}
 </style>
-<?php 
-	$_SESSION["isLogged"]=False;
-	include('header.php'); 
-?>
+
 <body style="text-align:center;	background-image:linear-gradient(#81c3d7,#d9dcd6,#3a7ca5);">
 	<div>
 		<form name="register" action="register_user.php" method="post" enctype="multipart/form-data">
@@ -76,6 +77,7 @@
 						<button type="submit" name="save" class="btn btn-success btn-lg" style="border-radius:30px;padding: 15px 20px; width: 100%;">Register Now</button>
 					</div>
 					<div class="text-center">Already have an account? <a href="login.php">Sign in</a></div>
+					<a class="login-btn" href="<?php echo $client->createAuthUrl(); ?>">Sign-up with Google</a>
 				</div>
 			</div>
 		</form>

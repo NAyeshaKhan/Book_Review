@@ -98,7 +98,7 @@
 	}
 </style>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" style="position:fixed;">
+<nav class="navbar navbar-inverse navbar-fixed-top">
 	<div style="float:left;">
 		<a href="index.php">
 			<img alt="Website icon" style="margin:1px;" src="https://img.icons8.com/color/48/000000/storytelling.png"/>
@@ -107,7 +107,6 @@
 		<div class="container-fluid navbar-header navbar-right">
 			<ul class="nav navbar-nav">
 			<?php if (!$_SESSION["isLogged"]): ?>
-				
 				<div class="container-fluid navbar-header navbar-right">
 					<ul class="nav navbar-nav">
 						  <li><a style="float:right;" href="about.php"><span class="glyphicon glyphicon-info-sign"></span> About Us</a></li>
@@ -115,7 +114,7 @@
 				</div>
 			<?php else: ?>
 			  <div class="search-container" style="float:left;padding:10px;">
-					<form id="#searchform" action="search_results.php" method="POST">
+					<form action="search_results.php" method="POST">
 						<input type="text" name="search"  placeholder="Search for Books" style="width:250px;"></input>
 						<button type="submit" name="save" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
 					</form>

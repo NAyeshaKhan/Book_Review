@@ -6,8 +6,6 @@
 	$id=$_SESSION['id'];
 	$sql = "SELECT * FROM `review` WHERE user_id='$id' ORDER BY review_id DESC";
 	$user_reviews= mysqli_query($conn,$sql);
-	
-
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +68,7 @@
 				</div>
 			<?php endwhile; ?>
 		<?php else: ?>
-			<h4 style="text-align:center;">No User Data Found</h4>
+			<h4 style="text-align:center;">No Review Data Found</h4>
 		<?php endif; ?>
 		
 		

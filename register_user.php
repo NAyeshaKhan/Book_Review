@@ -1,7 +1,7 @@
 <?php
-extract($_POST);
-include("database.php");
-$sql=mysqli_query($conn,"SELECT * FROM `user` where email='$email'");
+	extract($_POST);
+	include("database.php");
+	$sql=mysqli_query($conn,"SELECT * FROM `user` where email='$email'");
 	if(mysqli_num_rows($sql)>0)
 	{
 		echo '<script>alert("Email Id Already Exists")</script>'; 
@@ -24,16 +24,11 @@ $sql=mysqli_query($conn,"SELECT * FROM `user` where email='$email'");
 		$query="INSERT INTO `user`(`fname`, `lname`, `email`, `password`, `user_type`) VALUES ('$first_name', '$last_name', '$email', '$hash', '$user_type')";
 		$sql=mysqli_query($conn,$query)or die("Could Not Perform the Query");
 		
-		/*$cookie_name = "book_id";
-		$cookie_value = 'XXXX';
-		setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-		*/
 		header ("Location: login.php?status=success");
 	}else {
 		echo '<script>alert("Invalid User Information. Please retry.")</script>';
 		exit;
 	}
-		
 		
 	function test_input($data) {
 	  $data = trim($data);
@@ -41,6 +36,5 @@ $sql=mysqli_query($conn,"SELECT * FROM `user` where email='$email'");
 	  $data = htmlspecialchars($data);
 	  return $data;
 	}	
-	
-
 ?>
+

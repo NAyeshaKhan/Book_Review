@@ -9,7 +9,4 @@
 	}
 	
 	$id= $_SESSION["id"];
-	$user_sql=mysqli_query($conn,"SELECT * FROM user where user_id='$id' ");
-	$row= mysqli_fetch_array($user_sql);
-	
 ?>

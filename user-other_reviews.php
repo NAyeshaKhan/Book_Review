@@ -16,7 +16,7 @@
 	}
 	
 	if ($n==0){
-		#Fetches users who've made reviews
+		#Fetches users who've made reviews recently
 		$user_rows= mysqli_query($conn,"SELECT * FROM user WHERE user_id IN( SELECT user.user_id FROM user INNER JOIN review ON user.user_id=review.user_id WHERE user.user_id <> '$id') ORDER BY user_id DESC LIMIT 4");
 	}
 ?>

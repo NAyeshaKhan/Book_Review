@@ -2,6 +2,7 @@
 	include 'database.php';
 	session_start();
 	include 'user_auth.php';
+	include('header.php');
 	$genre_list=['Comedy','Romance','Children','Non-Fiction','Horror','Suspense']; 
 	
 	$sql="SELECT following.user_id_2, user.fname, user.lname FROM following JOIN user ON user.user_id=following.user_id_2 WHERE user_id_1='$id'";
@@ -14,9 +15,7 @@
   <title>BookRev User Panel</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
 </head>
-<?php include('header.php'); ?>
 <style>
 	div.scroll {
 	  overflow: auto;
@@ -101,7 +100,7 @@
 									<?php if(isset($book_data['volumeInfo']['imageLinks']['thumbnail'])): ?>
 										<img src="<?php echo $book_data['volumeInfo']['imageLinks']['thumbnail']; ?>" style="margin:1rem; width: 100px; height:100px;vertical-align: middle;border-radius: 5px;float:left; "></img>
 									<?php else: ?>
-										<img src="img/book.png" style="margin:5px;vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
+										<img src="https://img.icons8.com/color/100/000000/book.png" style="margin:5px;vertical-align: middle; width: 150px; height: 150px; border-radius: 5px;float:left; "></img>
 									<?php endif; ?>
 									<div class="card-body">
 										<h5 class="card-title"><a href="view_review.php?id=<?php echo $review_arr[2];?>"><b><?php echo $review_arr[3];?></b></a></h5>
