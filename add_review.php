@@ -19,7 +19,7 @@
 		
 		$sql=mysqli_query($conn,"SELECT * FROM `review` WHERE user_id='$user_id' AND book_id='$book_id'");
 		
-		if(!empty($sql)){
+		if($sql->num_rows>0){
 			echo '<script>alert("Review for this book already exists!")</script>'; 
 			exit;
 		}else{
