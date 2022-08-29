@@ -40,14 +40,6 @@
 				<a href="about.php"><button class="btn btn-success btn-lg" style="color:white;">About Us</button></a>
 			<?php endif; ?>
 		  </div>
-		  <?php
-		  /*$cookie_name="book_id";
-		  if (isset($_COOKIE[$cookie_name])): ?>
-			<p><?php echo "Cookie named '" . $cookie_name . "' is set!";?></p>
-			<p><?php echo "Value is: " . $_COOKIE[$cookie_name];?></p>
-		  <?php else: ?>
-			<p><?php echo "Cookie named '" . $cookie_name . "' is not set!";?></p>
-		  <?php endif; */?>
 	</div>
 </body>
 
