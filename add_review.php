@@ -23,8 +23,9 @@
 			echo '<script>alert("Review for this book already exists!")</script>'; 
 			exit;
 		}else{
-			$sql="INSERT INTO `review` (`user_id`, `book_id`, `title`, `description`) VALUES ('$user_id', '$book_id', '$title', '$description')";
-			$stmnt= mysqli_query($conn,$sql)or die("<h2 align='center'>Review Could not be Added.</h2>");
+			$add_rvw = $conn->prepare("INSERT INTO `review` (`user_id`, `book_id`, `title`, `description`) VALUES (?, ?, '$title', '$description')");
+			$add_rvw->bind_param("is",$user_id, $book_id );
+			$add_rvw->execute();
 			
 			$cookie_name = "book_id";
 			$cookie_value = $book_id;
@@ -106,5 +107,4 @@
 			</div>
 		</div>
 	</body>
-
 </html>

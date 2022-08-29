@@ -10,8 +10,10 @@
 		$title=htmlspecialchars($title);
 		$title=mysqli_real_escape_string($conn,$title);
 		
-		$stmnt= mysqli_query($conn,"INSERT INTO `library` (`user_id`, `title`) VALUES ('$id', '$title')")or die("Could not create Library");
-        
+		$add_lib = $conn->prepare("INSERT INTO `library` (`user_id`, `title`) VALUES (?, ?)");
+		$add_lib->bind_param("is",$id, $title );
+		$add_lib->execute()or die("Could not create Library");
+			
 		if($_SESSION['user_type']=='admin'){
 			header("Location: admin-library_info.php");
 		}else if($_SESSION['user_type']=='user'){
@@ -67,5 +69,4 @@
 		</form>
 	</div>
 </body>
-
 </html>
