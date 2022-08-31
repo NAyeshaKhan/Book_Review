@@ -16,15 +16,20 @@
 	
 	@media only screen and (max-width: 600px) {
 		.containerX, .middle{
-			padding-top:45rem;
 			width:100%;
 			margin-left:0rem;
 		}
+		.containerX{
+		    padding-top:45rem;
+		}
+		.middle{
+		    padding-top:6rem;
+		}
 	}
 </style>
-<body style="background-color:#F4F1EA;margin-left: 130px;">
+<body style="background-color:#F4F1EA;margin-left: 200px;">
 	<div class="containerX" style="width:100%;height:100%;">
-		<img src="img/book_stack.jpg" alt="Books on a shelf" class="image" >
+		<img src="img/book_stack.jpg" alt="Books on a shelf" class="image">
 		<div class="middle">
 			<br>
 			<h1  style="text-align:center;">Welcome to BookRev!</h1>
